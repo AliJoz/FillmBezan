@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-mask {
+    clip-path: polygon(36% 0, 100% 0, 67% 100%, 0% 100%);
+
+    background-size: cover;
+    background-position: center;
+}
+.soli{
+  
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 42% 0);
+    background-size: cover;
+    background-position: center;
+
+}

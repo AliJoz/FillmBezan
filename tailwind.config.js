@@ -45,8 +45,9 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'soldierback':"url('./Style/img/soldier.png')",
-        'bgbody':"url('style/img/bg.jpg')",
+        'soldierback':"url('../Style/img/soldier.png')",
+        'bgbody':"url('../style/img/bg.jpg')",
+        'bgover':"url('../style/img/bgover.jpg')",
       },
     },
     screens: {

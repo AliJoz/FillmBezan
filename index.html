@@ -1,81 +1,108 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/out.css">
-    <title>بزن  فیلم</title>
-</head>
-<body class="bg-gray-900 text-white bg-bg  ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/out.css" />
+    <title>بزن فیلم</title>
+  </head>
+  <body class="bg-gray-900 text-white bg-bg">
     <!-- Header Area -->
     <header class="w-full py-4 bg-transparent fixed top-0 z-10">
-        <div class="container mx-auto flex items-center justify-between">
-            <!-- Logo -->
-            <div class="flex items-center">
-                <a href="index.html">
-                    <img src="Style/logo/logo.png" alt="Logo" class="h-10">
-                </a>
-                <span class="text-2xl font-bold ml-2 px-2 ">بزن فیلم</span>
+      <div class="container mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="index.html">
+            <img src="Style/logo/logo.png" alt="Logo" class="h-10" />
+          </a>
+          <span class="text-2xl font-bold ml-2 px-2">بزن فیلم</span>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="hidden lg:flex space-x-8 px-3">
+          <a href="#" class="hover:text-yellow-400 px-6">خانه </a>
+          <a href="#" class="hover:text-yellow-400">فیلم </a>
+          <a href="#" class="hover:text-yellow-400">تلویزبون</a>
+          <a href="#" class="hover:text-yellow-400">اشتراک خریدن</a>
+          <a href="#" class="hover:text-yellow-400">بلاگ</a>
+          <a href="#" class="hover:text-yellow-400">ارتباط باما</a>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="hidden md:flex items-center space-x-2">
+          <button class="hover:text-yellow-400 h-7 w-7">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              />
+            </svg>
+          </button>
+          <div class="relative"></div>
+          <a
+            href="#"
+            class="px-4 py-2 bg-yellow-400 rounded-md font-semibold hover:bg-yellow-600"
+            >ثبت نام
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="lg:hidden p-2 text-2xl" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+    <main class="w-full">
+      <section
+        class="bg-bgover relative h-screen flex items-center bg-cover bg-center"
+      >
+        <!-- محتوای متن -->
+        <div class="absolute left-0 ">
+          <div class="container mx-auto space-y-8  lg:px-8">
+            <div class="text-white max-w-xl pl-7 space-y-8">
+              <h6 class="text-7xl tracking-widest font-semibold mb-2 text-yellow-500">بزن فیلم</h6>
+              <h2 class="text-3xl tracking-wider lg:text-4xl font-bold mb-6">
+             تلوزیون آنلاین
+              </h2>
             </div>
-
-            <!-- Navigation -->
-            <nav class="hidden lg:flex space-x-8 px-3">
-                <a href="#" class="hover:text-yellow-400 px-6">خانه </a>
-                <a href="#" class="hover:text-yellow-400">فیلم </a>
-                <a href="#" class="hover:text-yellow-400">تلویزبون</a>
-                <a href="#" class="hover:text-yellow-400">اشتراک خریدن</a>
-                <a href="#" class="hover:text-yellow-400">بلاگ</a>
-                <a href="#" class="hover:text-yellow-400">ارتباط باما</a>
-            </nav>
-
-            <!-- Header Actions -->
-            <div class="hidden md:flex items-center space-x-2">
-                <button class="hover:text-yellow-400 h-7 w-7"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                  </svg>
-                  </button>
-                <div class="relative">
-                    
-                </div>
-                <a href="#" class="px-4 py-2 bg-yellow-400 rounded-md font-semibold hover:bg-yellow-600">ثبت نام </a>
-            </div>
-
-            <!-- Mobile Menu Toggle -->
-            <button class="lg:hidden p-2 text-2xl" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
+            <div class="flex justify-center">
+            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400">
+                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-zinc-200 dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    تماشا
+                </span>
             </button>
         </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-gray-800 bg-opacity-90 flex flex-col items-center justify-center hidden">
-        <button class="absolute top-4 right-4 text-3xl" onclick="toggleMobileMenu()">
-            <i class="fas fa-times"></i>
-        </button>
-        <nav class="space-y-6 text-center text-xl">
-            <a href="#" class="block hover:text-yellow-400">Home</a>
-            <a href="#" class="block hover:text-yellow-400">Movie</a>
-            <a href="#" class="block hover:text-yellow-400">TV Show</a>
-            <a href="#" class="block hover:text-yellow-400">Pricing</a>
-            <a href="#" class="block hover:text-yellow-400">Blog</a>
-            <a href="#" class="block hover:text-yellow-400">Contacts</a>
-        </nav>
-        
-    </div>
-
-    <!-- Modal Search -->
-    <div id="search-modal" class="fixed inset-0 bg-gray-900 bg-opacity-90 hidden flex items-center justify-center">
-        <div class="bg-gray-800 p-6 rounded-lg">
-            <form>
-                <input type="text" placeholder="Search here..." class="w-full px-4 py-2 rounded-md text-gray-900">
-                <button class="w-full mt-4 px-4 py-2 bg-yellow-500 text-white rounded-md">Search</button>
-            </form>
+            
+          </div>
         </div>
-    </div>
 
-<section class="bg-soldierback bg-cover bg-center h-screen">
-    <img src="" alt="" srcset="">
-</section>
+        <div class="flex justify-start items-center">
+          <!-- بخش محتوای سمت چپ -->
+          <div
+            class="text-white max-w-lg space-y-4 absolute right-60 custom-mask h-full"
+          >
+            <img src="style/img/blog.jpg" class="" alt="" />
+          </div>
+          <!-- تصویر سرباز در سمت راست -->
+          <div
+            class="absolute soli right-2 bottom-0 hidden lg:block w-[400px] h-full"
+          >
+            <img
+              src="Style/img/soldier.png"
+              alt="Soldier"
+              class="h-full w-[700px]"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- JavaScript for Mobile Menu & Modal -->
     <!-- <script>
@@ -86,6 +113,5 @@
             document.getElementById("search-modal").classList.toggle("hidden");
         }
     </script> -->
-
-</body>
+  </body>
 </html>
