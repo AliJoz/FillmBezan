@@ -44,7 +44,10 @@ module.exports = {
           lg: "0.625 rem",
         },
       },
-      backgroundImage: {},
+      backgroundImage: {
+        'soldierback':"url('./Style/img/soldier.png')",
+        'bgbody':"url('style/img/bg.jpg')",
+      },
     },
     screens: {
       xs: "375px",
