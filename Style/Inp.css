@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    @font-face {
+      font-family: "IRANSansWeb";
+      src: local("IRANSansWeb"), url("font/IRANSansWeb.ttf");
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "IRANSansWeb_Black";
+      src: local("IRANSansWeb_Black"), url("font/IRANSansWeb_Black.ttf");
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "IRANSansWeb_Bold";
+      src: local("IRANSansWeb_Bold"), url("font/IRANSansWeb_Bold.ttf");
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "IRANSansWeb_Light";
+      src: local("IRANSansWeb_Light"), url("font/IRANSansWeb_Light.ttf");
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "IRANSansWeb_Medium";
+      src: local("IRANSansWeb_Medium"), url("font/IRANSansWeb_Medium.ttf");
+      font-display: swap;
+    }
+    
+    
+  }
+
 .custom-mask {
     clip-path: polygon(96% 0, 55% 100%, 19% 100%, 70% 0);
 

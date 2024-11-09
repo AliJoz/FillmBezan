@@ -26,13 +26,11 @@ module.exports = {
         "4xl": "2rem",
       },
       fontFamily: {
-        "iran-B": "Iran Bold",
-        "iran-Med": "Iran medum",
-        "iran-R": "Iran  regular",
-        "iran-th": "Iran thin",
-        "iran-num": "IranFaNum",
-        "iran-black": "Iran Block",
-        "iran-light": "Iran Light",
+        "iran-S": "IRANSansWeb",
+        "iranS-Med": "IRANSansWeb_Medium",
+        "iranS-B": "IRANSansWeb_Bold",
+        "iran-black": "IRANSansWeb_Black",
+        "iran-light": "IRANSansWeb_Light",
       },
       letterSpacing: {
         tightest: "-0.065em",
