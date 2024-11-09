@@ -59,7 +59,7 @@
         </button>
       </div>
     </header>
-    <main class="w-full">
+    <main class="w-full  ">
       <section
         class="bg-bgover relative h-screen flex items-center bg-cover bg-center"
       >
@@ -88,7 +88,7 @@
           <div
             class="text-white max-w-sm space-y-4 absolute bottom-0 right-[27rem] custom-mask h-full"
           >
-            <img src="style/img/blog.jpg" class="backdrop-blur-xl" alt="" />
+            <img src="style/img/blog.jpg" class="backdrop-blur-xl h-full w-40" alt="" />
           </div>
           <!-- تصویر سرباز در سمت راست -->
           <div
@@ -102,16 +102,107 @@
           </div>
         </div>
       </section>
+ <!-- >سلایدر ها  -->
+ <section class="container mx-auto py-8">
+  <h1 class="text-3xl font-bold text-yellow-400 mb-8">فیلم‌های جدید</h1>
+<div class="flex justify-between items-center">
+  <div class="flex justify-start space-x-4 mb-8">
+    <button class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-yellow-400 ml-3 border border-yellow-400 hover:text-zinc-900">آنلاین</button>
+      <button class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-yellow-400  hover:text-zinc-900">سینمایی</button>
+      <button class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-yellow-400  hover:text-zinc-900">انیمیشن</button>
+  </div>
+  <div class="flex gap-x-3 pl-4  ">
+    <button onclick="prevSlide()" class=" p-3  transform -translate-y-1/2 bg-gray-700 text-white rounded-full    hover:bg-yellow-400">
+        ‹
+    </button>
+    <button onclick="nextSlide()" class="  transform -translate-y-1/2 bg-gray-700 text-white rounded-full p-3 hover:bg-yellow-400">
+        ›
+    </button>
+  </div>
+</div>
+  <!-- Slider Container -->
+  <div class="relative slider-container">
+      <!-- Slider Track -->
+      <div id="slider" class="slider">
+          <!-- Slide 1 -->
+          <div class="slide p-4">
+              <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                  <img src="Style/img/baner/B1.jpg" alt="Women's Day" class="w-full h-64 object-cover">
+                  <div class="p-4">
+                      <h3 class="text-xl font-semibold">Women's Day</h3>
+                      <div class="flex items-center text-yellow-400 mt-2">
+                          <span class="text-sm">2021</span>
+                          <span class="ml-4 bg-gray-700 px-2 py-1 rounded text-xs">HD</span>
+                          <span class="ml-4 flex items-center">
+                              <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.367 4.21a1 1 0 00.95.69h4.4c.969 0 1.371 1.24.588 1.81l-3.57 2.6a1 1 0 00-.364 1.118l1.367 4.21c.3.921-.755 1.688-1.54 1.118l-3.57-2.6a1 1 0 00-1.176 0l-3.57 2.6c-.784.57-1.838-.197-1.539-1.118l1.367-4.21a1 1 0 00-.364-1.118l-3.57-2.6c-.783-.57-.38-1.81.588-1.81h4.4a1 1 0 00.95-.69l1.367-4.21z"/></svg>
+                              <span class="ml-1 text-sm">3.5</span>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="slide p-4">
+              <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                  <img src="Style/img/baner/B2.jpg" alt="The Perfect Match" class="w-full h-64 object-cover">
+                  <div class="p-4">
+                      <h3 class="text-xl font-semibold">The Perfect Match</h3>
+                      <div class="flex items-center text-yellow-400 mt-2">
+                          <span class="text-sm">2021</span>
+                          <span class="ml-4 bg-gray-700 px-2 py-1 rounded text-xs">4K</span>
+                          <span class="ml-4 flex items-center">
+                              <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.367 4.21a1 1 0 00.95.69h4.4c.969 0 1.371 1.24.588 1.81l-3.57 2.6a1 1 0 00-.364 1.118l1.367 4.21c.3.921-.755 1.688-1.54 1.118l-3.57-2.6a1 1 0 00-1.176 0l-3.57 2.6c-.784.57-1.838-.197-1.539-1.118l1.367-4.21a1 1 0 00-.364-1.118l-3.57-2.6c-.783-.57-.38-1.81.588-1.81h4.4a1 1 0 00.95-.69l1.367-4.21z"/></svg>
+                              <span class="ml-1 text-sm">3.5</span>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="slide p-4">
+              <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                  <img src="Style/img/baner/B3.jpg" alt="The Dog Woof" class="w-full h-64 object-cover">
+                  <div class="p-4">
+                      <h3 class="text-xl font-semibold">The Dog Woof</h3>
+                      <div class="flex items-center text-yellow-400 mt-2">
+                          <span class="text-sm">2021</span>
+                          <span class="ml-4 bg-gray-700 px-2 py-1 rounded text-xs">HD</span>
+                          <span class="ml-4 flex items-center">
+                              <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.367 4.21a1 1 0 00.95.69h4.4c.969 0 1.371 1.24.588 1.81l-3.57 2.6a1 1 0 00-.364 1.118l1.367 4.21c.3.921-.755 1.688-1.54 1.118l-3.57-2.6a1 1 0 00-1.176 0l-3.57 2.6c-.784.57-1.838-.197-1.539-1.118l1.367-4.21a1 1 0 00-.364-1.118l-3.57-2.6c-.783-.57-.38-1.81.588-1.81h4.4a1 1 0 00.95-.69l1.367-4.21z"/></svg>
+                              <span class="ml-1 text-sm">3.5</span>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Slide 4 -->
+          <div class="slide p-4">
+              <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                  <img src="Style/img/baner/B4.jpg" alt="The Easy Reach" class="w-full h-64 object-cover">
+                  <div class="p-4">
+                      <h3 class="text-xl font-semibold">The Easy Reach</h3>
+                      <div class="flex items-center text-yellow-400 mt-2">
+                          <span class="text-sm">2021</span>
+                          <span class="ml-4 bg-gray-700 px-2 py-1 rounded text-xs">8K</span>
+                          <span class="ml-4 flex items-center">
+                              <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.367 4.21a1 1 0 00.95.69h4.4c.969 0 1.371 1.24.588 1.81l-3.57 2.6a1 1 0 00-.364 1.118l1.367 4.21c.3.921-.755 1.688-1.54 1.118l-3.57-2.6a1 1 0 00-1.176 0l-3.57 2.6c-.784.57-1.838-.197-1.539-1.118l1.367-4.21a1 1 0 00-.364-1.118l-3.57-2.6c-.783-.57-.38-1.81.588-1.81h4.4a1 1 0 00.95-.69l1.367-4.21z"/></svg>
+                              <span class="ml-1 text-sm">3.5</span>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+       
+  </div>
+</section>
+
+
     </main>
 
-    <!-- JavaScript for Mobile Menu & Modal -->
-    <!-- <script>
-        function toggleMobileMenu() {
-            document.getElementById("mobile-menu").classList.toggle("hidden");
-        }
-        function toggleSearchModal() {
-            document.getElementById("search-modal").classList.toggle("hidden");
-        }
-    </script> -->
+   
+    <script src="./js.js"></script>
   </body>
 </html>

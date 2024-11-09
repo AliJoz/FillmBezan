@@ -14,3 +14,15 @@
     background-position: center;
 
 }
+.slider-container {
+    overflow: hidden;
+    width: 100%;
+}
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+    min-width: 25%;
+    box-sizing: border-box;
+}
