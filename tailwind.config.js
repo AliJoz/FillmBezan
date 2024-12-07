@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./*.{html,js}"],
+  content: ["./html/**/*.html",  
+    "./js/**/*.js",  
+      ]    ,
   darkMode: "class",
   theme: {
     extend: {
@@ -43,10 +45,10 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'soldierback':"url('../Style/img/soldier.png')",
-        'bgbody':"url('../style/img/bg.jpg')",
-        'bgover':"url('../style/img/bgover.jpg')",
-        'bgsliper':"url('../style/img/bgslider.jpg')",
+        'soldierback':"url('../public/img/soldier.png')",
+        'bgbody':"url('../public/img/bg.jpg')",
+        'bgover':"url('../public/img/bgover.jpg')",
+        'bgsliper':"url('../public/img/bgslider.jpg')",
 
       },
     },
@@ -66,3 +68,5 @@ module.exports = {
     // require("tailwind-scrollbar"),
   ],
 };
+
+
