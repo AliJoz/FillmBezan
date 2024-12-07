@@ -20,26 +20,33 @@ let currentIndex = 0;
 
     window.addEventListener('resize', updateSlider);
 
+// btn them 
+let togglebtn = document.querySelectorAll(".btnThem");
 
-    const themeToggle = document.getElementById('theme-toggle');
+togglebtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    let icons = btn.querySelector(".icon-light");
+    let changeIcon = document.querySelectorAll(".icon-light");
+    let c = document.querySelector(".changeName");
 
-  // تغییر تم با کلیک روی آیکون
+    if (localStorage.theme === "dark") {
+      document.documentElement.classList.remove("dark");
+      changeIcon.forEach(function (item) {
+        item.setAttribute("href", "#moon");
+      });
 
-  if (
-    localStorage.getItem('theme') === 'dark' || 
-    (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
-  ) {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
-  
-  themeToggle.addEventListener('click', () => {
-    if (document.documentElement.classList.contains('dark')) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light'); // ذخیره تم روشن
+      c.innerHTML = "تم تیره";
+      localStorage.theme = "light";
     } else {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark'); // ذخیره تم تاریک
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      changeIcon.forEach(function (item) {
+        item.setAttribute("href", "#sun");
+      });
+
+      c.innerHTML = "تم روشن";
+      localStorage.theme = "dark";
     }
   });
+}); 
+// 

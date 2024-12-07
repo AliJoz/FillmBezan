@@ -48,6 +48,7 @@ module.exports = {
         'soldierback':"url('../public/img/soldier.png')",
         'bgbody':"url('../public/img/bg.jpg')",
         'bgover':"url('../public/img/bgover.jpg')",
+        'bgcoverLight':"url('../public/img/167759.png')",
         'bgsliper':"url('../public/img/bgslider.jpg')",
 
       },
