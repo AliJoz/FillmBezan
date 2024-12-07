@@ -5,27 +5,27 @@
 @layer base {
   @font-face {
     font-family: "IRANSansWeb";
-    src: local("IRANSansWeb"), url("font/IRANSansWeb.ttf");
+    src: local("IRANSansWeb"), url("/public/font/IRANSansWeb.ttf");
     font-display: swap;
   }
   @font-face {
     font-family: "IRANSansWeb_Black";
-    src: local("IRANSansWeb_Black"), url("font/IRANSansWeb_Black.ttf");
+    src: local("IRANSansWeb_Black"), url("/public/font/IRANSansWeb_Black.ttf");
     font-display: swap;
   }
   @font-face {
     font-family: "IRANSansWeb_Bold";
-    src: local("IRANSansWeb_Bold"), url("font/IRANSansWeb_Bold.ttf");
+    src: local("IRANSansWeb_Bold"), url("/public/font/IRANSansWeb_Bold.ttf");
     font-display: swap;
   }
   @font-face {
     font-family: "IRANSansWeb_Light";
-    src: local("IRANSansWeb_Light"), url("font/IRANSansWeb_Light.ttf");
+    src: local("IRANSansWeb_Light"), url("/public/font/IRANSansWeb_Light.ttf");
     font-display: swap;
   }
   @font-face {
     font-family: "IRANSansWeb_Medium";
-    src: local("IRANSansWeb_Medium"), url("font/IRANSansWeb_Medium.ttf");
+    src: local("IRANSansWeb_Medium"), url("/public/font/IRANSansWeb_Medium.ttf");
     font-display: swap;
   }
 }

@@ -86,7 +86,7 @@
           </button>
           <!-- Download Button -->
           <div class="relative inline-block text-left group">
-            <!-- دکمه دانلود -->
+            <!--   -->
             <button
               class="relative font-iranS-B hover:font-iran-S inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-orange-500 transition duration-300 ease-out border-2 border-orange-500 rounded-full shadow-md"
             >
@@ -102,7 +102,7 @@
               >
             </button>
 
-            <!-- منوی کشویی کیفیت‌ها -->
+            <!--   -->
             <div
               class="absolute top-full left-0 mt-0.5 w-full text-center bg-gray-900 border border-orange-500 rounded-lg p-2 text-orange-500 hidden group-hover:block"
             >
@@ -145,17 +145,17 @@
         </div>
       </div>
     </div>
-
+<!--  coomite -->
     <div>
-      <h2 class="text-4xl font-bold mb-4 text-end p-6">نظرات</h2>
+      <h2 class="text-4xl font-bold mb-4 text-end p-6 pr-[8rem]">نظرات</h2>
       <div class="flex justify-between relative">
-      <div class="w-96 rounded-lg shadow-md border-zinc-900 border-2 p-6 ml-12 absolute left-48 -top-8">
+      <div class=" rounded-lg w-[40rem] shadow-md border-zinc-900 border-2 p-6 ml-12 absolute left-48 -top-8">
         <!-- Comment Form -->
         <div id="commentFormContainer" class="hidden">
           <textarea
             id="commentInput"
-            class="w-full h-20 p-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="نظر خود را بنویسید..."
+            class="w-full h-20 p-2 border bg-gray-700 text-white text-end text-lg border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="  ...نظر خود را بنویسید"
           ></textarea>
           <label class="block mb-2 font-medium">امتیاز شما:</label>
          
@@ -175,8 +175,7 @@
             <button class="star text-gray-400 hover:text-yellow-400 focus:outline-none transition-transform duration-200 hover:scale-110" data-value="5" aria-label="Rate 5 stars">
               <svg class="w-10 h-10"><use href="#star"/></svg>
             </button>
-            
-            <!-- تکرار برای بقیه ستاره‌ها -->
+            <!-- try star -->
           </div>
           
           <button
@@ -205,6 +204,25 @@
        </div> 
     </div>
   </div>ّ
+
+  <!-- modal -->
+
+
+  <!-- دکمه برای باز کردن مودال -->
+<!-- <button id="openModal" class="btn bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">باز کردن مودال</button> -->
+
+<!-- مودال -->
+<div id="modal" class="items-center justify-center  hidden z-50  relative">
+  <div class="modal-box w-[25rem] h-24  bg-white p-6 rounded-lg shadow-lg absolute top-28 left-[46rem]">
+    <p class="text-gray-700 text-center font-iranS-B text-lg" id="modolP"></p>
+    <div class=" flex justify-end">
+      <button id="closeModal" class="btn bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg">
+        بستن
+      </button>
+    </div>
+  </div>
+</div>
+
     <script src="../js/detels.js"></script>
   </body>
 </html>
