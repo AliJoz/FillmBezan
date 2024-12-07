@@ -40,4 +40,31 @@ document.addEventListener('DOMContentLoaded', () => {
       createCommentBtn.classList.remove('hidden');
     });
   });
+
+  // ستارع ها 
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const stars = document.querySelectorAll(".star");
+    let selectedRating = 0;
+  
+    stars.forEach(star => {
+      star.addEventListener("click", () => {
+        selectedRating = parseInt(star.getAttribute("data-value"));
+        updateStars(selectedRating);
+      });
+    });
+  
+    function updateStars(rating) {
+      stars.forEach(star => {
+        const value = parseInt(star.getAttribute("data-value"));
+        if (value <= rating) {
+          star.classList.remove("text-gray-400");
+          star.classList.add("text-yellow-400");
+        } else {
+          star.classList.remove("text-yellow-400");
+          star.classList.add("text-gray-400");
+        }
+      });
+    }
+  });
   

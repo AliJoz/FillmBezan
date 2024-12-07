@@ -91,3 +91,6 @@
 .custom-bg:hover {
   @apply hover:bg-zinc-100  !important;
 }
+.role{
+  width: 64%;
+}
