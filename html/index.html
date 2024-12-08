@@ -203,15 +203,15 @@
           <div class="flex gap-x-3 pl-4">
             <button
               onclick="prevSlide()"
-              class="p-3 transform -translate-y-1/2 dark:bg-neutral-200 dark:text-zinc-800 bg-gray-700 text-white rounded-full hover:bg-yellow-400"
+              class="p-3 transform relative -translate-y-1/2 dark:bg-neutral-300 dark:text-zinc-800 bg-gray-700 text-white rounded-xl h-6 hover:bg-yellow-400"
             >
-              ‹
+             <span class="absolute top-0 left-3">‹</span> 
             </button>
             <button
               onclick="nextSlide()"
-              class="transform -translate-y-1/2 bg-gray-700 dark:bg-neutral-200 dark:text-zinc-800 text-white rounded-full p-3 hover:bg-yellow-400"
+              class="transform -translate-y-1/2 relative bg-gray-700  dark:bg-neutral-300  dark:text-zinc-800 text-white rounded-full p-3 h-6 hover:bg-yellow-400"
             >
-              ›
+            <span class="absolute top-0 left-2">  ›</span>
             </button>
           </div>
         </div>
