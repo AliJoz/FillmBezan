@@ -50,3 +50,13 @@ togglebtn.forEach((btn) => {
   });
 }); 
 // 
+
+// meno
+window.addEventListener('scroll', function() {
+    var menu = document.getElementById('menu');
+    if (window.scrollY > 120) {
+      menu.classList.add('hiddenMeno');  
+    } else {
+      menu.classList.remove('hiddenMeno');  
+    }
+  });
