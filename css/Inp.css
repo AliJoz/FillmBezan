@@ -107,3 +107,11 @@
 .borderYel{
  @apply border border-yellow-400
 }
+
+.modal {
+  display: none;
+}
+.small-modal {
+
+  @apply w-96 h-48 text-sm font-iran-black pb-2 mt-24
+}
