@@ -101,3 +101,9 @@
   transform: translateY(-100%); 
   transition: transform 0.3s ease-in-out; 
 }
+
+/* border film */
+
+.borderYel{
+ @apply border border-yellow-400
+}

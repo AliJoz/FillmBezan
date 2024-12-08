@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../public/logo/logo.png" type="image/png">
+
     <link rel="stylesheet" href="../css/output.css" />
     <title>بزن فیلم</title>
   </head>
@@ -81,16 +83,17 @@
         <!-- Navigation -->
         <nav class="hidden lg:flex space-x-8 px-3 font-iranS-Med text-base tracking-wide -ml-[5rem]  text-neutral-200 dark:text-zinc-800">
           <a href="#" class="hover:text-yellow-400 dark:hover:text-rose-600 px-6 ">خانه </a>
-          <a href="#" class="hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600">فیلم </a>
-          <a href="#" class="hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600">تلویزبون</a>
-          <a href="#" class="hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600">اشتراک خریدن</a>
-          <a href="#" class="hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600">بلاگ</a>
-          <a href="#" class="hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600">ارتباط باما</a>
+          <a href="#" class="hover:text-yellow-400  dark:hover:text-rose-600">فیلم </a>
+          <a href="#" class="hover:text-yellow-400  dark:hover:text-rose-600">تلویزبون</a>
+          <a href="#" class="hover:text-yellow-400  dark:hover:text-rose-600">اشتراک خریدن</a>
+          <a href="#" class="hover:text-yellow-400  dark:hover:text-rose-600">بلاگ</a>
+          <a href="#" class="hover:text-yellow-400  dark:hover:text-rose-600">ارتباط باما</a>
         </nav>
 
         <!-- Header Actions -->
         <div class="hidden md:flex items-center space-x-2">
-          <button class="hover:text-yellow-400 dark:hover:text-rose-600 dark:text-zinc-900 relative">
+          <button class="hover:text-yellow-400 dark:hover:text-rose-600 dark:text-zinc-900 relative" aria-label="Search" 
+          title="Search">
             <svg class="h-7 w-7"><use href="#search"></use></svg>
           </button>
           <div class="relative"></div>
@@ -101,10 +104,8 @@
           </a>
         </div>
 
-        <!-- Mobile Menu Toggle -->
-        <button class="lg:hidden p-2 text-2xl" onclick="toggleMobileMenu()">
-          <i class="fas fa-bars"></i>
-        </button>
+        
+       
       </div>
 
       <div class="absolute left-64 top-3">
@@ -112,7 +113,7 @@
           <svg class="w-8 h-8 dark:text-yellow-500">
             <use href="#moon" class="icon-light"></use>
           </svg>
-          <span class="changeName dark:text-yellow-300 mt-0.5">تم تیره</span>
+          <span class="changeName dark:text-zinc-700 mt-0.5 font-iran-black">تم تیره</span>
         </a>
       </div>
       <div class="flex absolute top-[3rem] left-[25rem] h-2">
@@ -176,7 +177,7 @@
       </section>
       <!-- >سلایدر ها  -->
       <section class="container mx-auto py-8">
-        <h1 class="text-3xl font-bold text-yellow-400 mb-8 font-iran-black">
+        <h1 class="text-3xl font-bold text-yellow-400 mb-8 font-iran-black dark:text-zinc-600">
           فیلم‌های جدید
         </h1>
         <div class="flex justify-between items-center">
@@ -184,17 +185,17 @@
             class="flex justify-start space-x-4 mb-8 font-iran-S tracking-wider  text-neutral-200 dark:text-zinc-800"
           >
             <button
-              class="px-4 py-2 bg-gray-700  dark:bg-neutral-200 text-white rounded-lg hover:bg-yellow-400 ml-3 border border-yellow-400 hover:text-zinc-900"
+              class="px-4 py-2 bg-gray-700  dark:bg-neutral-200 dark:text-zinc-900 text-white rounded-lg hover:bg-yellow-400 ml-3 borderYel hover:text-zinc-900 dark:hover:text-rose-700"
             >
               آنلاین
             </button>
             <button
-              class="px-4 py-2 bg-gray-700 dark:bg-neutral-200 text-white rounded-lg hover:bg-yellow-400 hover:text-zinc-900"
+              class="px-4 py-2 bg-gray-700 dark:bg-neutral-200  dark:text-zinc-900 text-white rounded-lg hover:bg-yellow-400 hover:text-zinc-900 dark:hover:text-rose-700"
             >
               سینمایی
             </button>
             <button
-              class="px-4 py-2 bg-gray-700 dark:bg-neutral-200 text-white rounded-lg hover:bg-yellow-400 hover:text-zinc-900"
+              class="px-4 py-2 bg-gray-700 dark:bg-neutral-200  dark:text-zinc-900 text-white rounded-lg hover:bg-yellow-400 hover:text-zinc-900 dark:hover:text-rose-700"
             >
               انیمیشن
             </button>
@@ -236,7 +237,7 @@
                     <div class="flex gap-x-3 items-center">
                       <span class="text-sm font-thin">2021</span>
                       <span
-                        class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin hover:bg-yellow-300 hover:text-black"
+                        class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
                         >HD</span
                       >
                     </div>
@@ -268,7 +269,7 @@
                     <div class="flex gap-x-3 items-center font-thin">
                       <span class="text-sm">2021</span>
                       <span
-                        class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin hover:bg-yellow-300 hover:text-black"
+                        class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
                         >4K</span
                       >
                     </div>
@@ -300,7 +301,7 @@
                     <div class="flex gap-x-3 items-center font-thin">
                       <span class="text-sm">2021</span>
                       <span
-                        class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin hover:bg-yellow-300 hover:text-black"
+                        class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
                         >HD</span
                       >
                     </div>
@@ -332,7 +333,7 @@
                     <div class="flex gap-x-3 items-center font-thin">
                       <span class="text-sm">2021</span>
                       <span
-                        class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin hover:bg-yellow-300 hover:text-black"
+                        class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
                         >8K</span
                       >
                     </div>
@@ -355,18 +356,18 @@
       <section>
         <!-- Header Section -->
         <div class="text-center py-8">
-          <h1 class="text-3xl font-bold text-yellow-400">10 فیلم پر بازدید</h1>
+          <h1 class="text-3xl font-bold text-yellow-400 dark:text-zinc-600">10 فیلم پر بازدید</h1>
         </div>
 
         <!-- Category Selection Bar -->
         <div class="flex justify-center items-center space-x-6 mb-6 text-lg font-iranS-Med ">
-          <button class="text-yellow-400 border-b-2 dark:text-rose-600 border-yellow-400 pb-1">
+          <button class="text-yellow-400 border-b-2 dark:text-rose-600 border-yellow-400 dark:border-rose-500 pb-1">
             معمایی
           </button>
-          <button class="text-gray-300 dark:text-zinc-800 hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600 pr-4">درام</button>
-          <button class="text-gray-300 dark:text-zinc-800 hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600">اکشن</button>
-          <button class="text-gray-300 dark:text-zinc-800 hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600">فانتری</button>
-          <button class="text-gray-300 dark:text-zinc-800 hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600">تخیلی</button>
+          <button class="text-gray-300 dark:text-zinc-800 hover:text-yellow-400  dark:hover:text-rose-600 pr-4">درام</button>
+          <button class="text-gray-300 dark:text-zinc-800 hover:text-yellow-400  dark:hover:text-rose-600">اکشن</button>
+          <button class="text-gray-300 dark:text-zinc-800 hover:text-yellow-400  dark:hover:text-rose-600">فانتری</button>
+          <button class="text-gray-300 dark:text-zinc-800 hover:text-yellow-400  dark:hover:text-rose-600">تخیلی</button>
         </div>
 
         <!-- Movies Grid -->
@@ -391,7 +392,7 @@
                 <div class="flex gap-x-3 items-center">
                   <span class="text-sm font-thin">2021</span>
                   <span
-                    class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin hover:bg-yellow-300 hover:text-black"
+                    class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
                     >HD</span
                   >
                 </div>
@@ -421,7 +422,7 @@
                 <div class="flex gap-x-3 items-center">
                   <span class="text-sm font-thin">2021</span>
                   <span
-                    class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin hover:bg-yellow-300 hover:text-black"
+                    class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
                     >HD</span
                   >
                 </div>
@@ -451,7 +452,7 @@
                 <div class="flex gap-x-3 items-center">
                   <span class="text-sm font-thin ">2021</span>
                   <span
-                    class="ml-4 px-2 py-1 rounded text-xs border border-white  dark:border-black font-thin hover:bg-yellow-300 hover:text-black"
+                    class="ml-4 px-2 py-1 rounded text-xs border border-white  dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
                     >HD</span
                   >
                 </div>
@@ -476,12 +477,12 @@
                 Women's Day
               </h3>
               <div
-                class="flex justify-between items-center text-yellow-400 mt-2 dark:text-zinc-900"
+                class="flex justify-between items-center text-yellow-400   mt-2 dark:text-zinc-900"
               >
                 <div class="flex gap-x-3 items-center">
                   <span class="text-sm font-thin">2021</span>
                   <span
-                    class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin hover:bg-yellow-300 hover:text-black"
+                    class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin  dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
                     >HD</span
                   >
                 </div>
@@ -524,21 +525,21 @@
             <nav class="mb-6 lg:mb-0 ">
               <ul class="flex space-x-6 text-gray-300  dark:text-zinc-900 font-iranS-Med text-lg">
                 <li>
-                  <a href="index.html" class="hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600 pl-5"
+                  <a href="index.html" class="hover:text-yellow-400  dark:hover:text-rose-600 pl-5"
                     >خانه</a
                   >
                 </li>
                 <li>
-                  <a href="index.html" class="hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600">فیلم</a>
+                  <a href="index.html" class="hover:text-yellow-400  dark:hover:text-rose-600">فیلم</a>
                 </li>
                 <li>
-                  <a href="index.html" class="hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600">تلوزیون</a>
+                  <a href="index.html" class="hover:text-yellow-400  dark:hover:text-rose-600">تلوزیون</a>
                 </li>
                 <li>
-                  <a href="index.html" class="hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600">وبلاگ</a>
+                  <a href="index.html" class="hover:text-yellow-400  dark:hover:text-rose-600">وبلاگ</a>
                 </li>
                 <li>
-                  <a href="pricing.html" class="hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600"
+                  <a href="pricing.html" class="hover:text-yellow-400  dark:hover:text-rose-600"
                     >اشتراک گذاری</a
                   >
                 </li>
@@ -554,21 +555,9 @@
                 placeholder="فیلم مورد علاقه"
                 class="bg-gray-800 dark:bg-neutral-300 text-gray-400 placeholder-gray-500 px-4 py-2 w-full focus:outline-none rounded-l-full"
               />
-              <button class="hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600 px-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                  />
-                </svg>
+              <button class="hover:text-yellow-400  dark:hover:text-rose-600 px-4" aria-label="Search" 
+              title="Search">
+                <svg class="w-6 h-6 dark:text-black"> <use href="#search"></use> </svg>
               </button>
             </div>
           </div>
@@ -581,14 +570,14 @@
           <!-- Quick Links -->
           <div class="mb-6 md:mb-0">
             <ul class="flex justify-center space-x-6 text-sm text-gray-400 dark:text-zinc-900 font-iranS-Med ">
-              <li><a href="#" class="hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600 ml-4">FAQ</a></li>
+              <li><a href="#" class="hover:text-yellow-400  dark:hover:text-rose-600 ml-4">FAQ</a></li>
               <li>
-                <a href="#" class="hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600 ml-4">ارتباط باما </a>
+                <a href="#" class="hover:text-yellow-400  dark:hover:text-rose-600 ml-4">ارتباط باما </a>
               </li>
               <li>
-                <a href="#" class="hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600">وبلاگ</a>
+                <a href="#" class="hover:text-yellow-400  dark:hover:text-rose-600">وبلاگ</a>
               </li>
-              <li><a href="#" class="hover:text-yellow-400 dark:hover:text-rose-600hover:text-yellow-400 dark:hover:text-rose-600">اشتراک</a></li>
+              <li><a href="#" class="hover:text-yellow-400  dark:hover:text-rose-600">اشتراک</a></li>
             </ul>
           </div>
 
@@ -656,7 +645,7 @@
           <!-- Copyright Text -->
           <p>
             © 2024. تمامی صفحه در
-            <a href="index.html" class="text-yellow-400 hover:underline"
+            <a href="index.html" class="text-yellow-400 dark:text-rose-700 no-underline text-lg hover:underline hover:underline-offset-4"
               >بزن فیلم</a
             >
           </p>
