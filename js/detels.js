@@ -59,9 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     const commentElement = document.createElement('div');
-    commentElement.classList.add('p-4', 'border', 'border-gray-300', 'rounded-md', 'mb-4');
+    commentElement.classList.add('p-4', 'border', 'border-gray-300', 'rounded-md', 'mb-4','pb-12',);
     commentElement.innerHTML = `
-    <p class="font-medium">${commentText}</p>
+    <p class="font-medium dark:text-zinc-800">${commentText}</p>
     <p class="text-yellow-500 mt-2">${'⭐️'.repeat(selectedRating)}</p>
     <p class="text-gray-500 text-sm mt-2">توسط: ${currentUsername}</p>
     `;
