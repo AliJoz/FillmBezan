@@ -202,23 +202,25 @@
           </div>
           <div class="flex gap-x-3 pl-4">
             <button
+            id="prevButton"
               onclick="prevSlide()"
               class="p-3 transform relative -translate-y-1/2 dark:bg-neutral-300 dark:text-zinc-800 bg-gray-700 text-white rounded-xl h-6 hover:bg-yellow-400"
             >
              <span class="absolute top-0 left-3">‹</span> 
             </button>
             <button
+            id="nextButton"
               onclick="nextSlide()"
               class="transform -translate-y-1/2 relative bg-gray-700  dark:bg-neutral-300  dark:text-zinc-800 text-white rounded-full p-3 h-6 hover:bg-yellow-400"
             >
-            <span class="absolute top-0 left-2">  ›</span>
+            <span class="absolute top-0 left-2 ">  ›</span>
             </button>
           </div>
         </div>
         <!-- Slider Container -->
         <div class="relative slider-container">
           <!-- Slider Track -->
-          <div id="slider" class="slider">
+          <div id="slider" class="slider flex transition-transform duration-500 ease-in-out">
             <!-- Slide 1 -->
             <div class="slide p-4">
               <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700">
@@ -326,6 +328,38 @@
                   <div class="p-4 dark:bg-neutral-200  text-white dark:text-zinc-900 ">
                   <h3 class="text-xl font-semibold font-iranS-Med text-left">
                     The Easy Reach
+                  </h3>
+                  <div
+                    class="flex justify-between items-center text-yellow-400 mt-2 dark:text-zinc-900"
+                  >
+                    <div class="flex gap-x-3 items-center font-thin">
+                      <span class="text-sm">2021</span>
+                      <span
+                        class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
+                        >8K</span
+                      >
+                    </div>
+                    <div>
+                      <span class="flex items-center gap-x-2">
+                        <svg class="w-5 h-5 "> <use href="#star"></use></svg>
+                        <span class="text-sm">3.5</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="slide p-4">
+              <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700">
+                <img
+                  src="/public/img/baner/B3.jpg "
+                  alt="The Easy Reach"
+                  class="w-full h-64 object-cover"
+                />
+                  <div class="p-4 dark:bg-neutral-200  text-white dark:text-zinc-900 ">
+                  <h3 class="text-xl font-semibold font-iranS-Med text-left">
+                    The Easy Reach5
                   </h3>
                   <div
                     class="flex justify-between items-center text-yellow-400 mt-2 dark:text-zinc-900"
