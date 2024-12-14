@@ -39,7 +39,7 @@
   background-position: center;
 }
 .slider-container {
-  /* overflow: hidden; */
+  overflow: hidden;
   width: 100%;
 }
 .slider {

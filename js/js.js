@@ -1,6 +1,7 @@
-let currentIndex = 0; 
-const itemsPerSlide = 4; 
+let currentIndex = 0;
+const itemsPerSlide = 4;
 let autoSlideInterval;
+
 function updateSlider() {
     const slider = document.getElementById('slider');
     const slideWidth = slider.querySelector('.slide').clientWidth;
@@ -9,36 +10,44 @@ function updateSlider() {
 
 function nextSlide() {
     const totalSlides = document.querySelectorAll('.slide').length;
-
-   
     if (currentIndex + itemsPerSlide < totalSlides) {
         currentIndex += 1;
     } else {
-        currentIndex = 0; 
+        currentIndex = 0; // بازگشت به شروع
+    }
     updateSlider();
+    resetAutoSlide();
 }
+
 function prevSlide() {
     const totalSlides = document.querySelectorAll('.slide').length;
     if (currentIndex > 0) {
-        currentIndex -= 1; 
+        currentIndex -= 1;
     } else {
-        currentIndex = totalSlides - itemsPerSlide;
+        currentIndex = totalSlides - itemsPerSlide; // بازگشت به انتها
     }
     updateSlider();
+    resetAutoSlide();
 }
 
 function resetAutoSlide() {
-    clearInterval(autoSlideInterval); 
-    startAutoSlide(); 
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
 }
+
 function startAutoSlide() {
     autoSlideInterval = setInterval(() => {
         nextSlide();
-    }, 5000); 
+    }, 5000);
 }
-window.addEventListener('resize', updateSlider);
-startAutoSlide();
 
+// اطمینان از تنظیم صحیح اسلایدر هنگام تغییر اندازه پنجره
+window.addEventListener('resize', () => {
+    updateSlider();
+});
+
+// شروع اسلایدر خودکار
+startAutoSlide();
 
     // btn them 
 let togglebtn = document.querySelectorAll(".btnThem");
@@ -94,4 +103,4 @@ window.addEventListener('scroll', function() {
     }
   });
   
-  }
+  
