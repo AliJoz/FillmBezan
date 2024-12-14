@@ -6,11 +6,11 @@
   <link rel="stylesheet" href="../css/output.css">
   <title>بلاگ فیلم‌ها</title>
 </head>
-<body class="bg-gray-100 dark:bg-gray-800">
-  <header class="bg-gray-700 dark:bg-gray-900 text-white py-6">
+<body class="dark:bg-neutral-200 bg-gray-800 dark:bg-bgbody ">
+  <header class="bg-gray-700 dark:bg-neutral-300 text-white py-6">
     <div class="container mx-auto text-center">
-      <h1 class="text-4xl font-bold">صفحه بلاگ فیلم‌ها</h1>
-      <p class="mt-2 text-gray-300">جدیدترین اخبار و اطلاعات فیلم‌ها</p>
+      <h1 class="text-4xl dark:text-zinc-800 font-bold">صفحه بلاگ فیلم‌ها</h1>
+      <p class="mt-2 dark:text-zinc-800 text-neutral-200">جدیدترین اخبار و اطلاعات فیلم‌ها</p>
       <form class="mt-4">
         <input type="text" placeholder="جستجوی فیلم..." class="p-2 rounded-md w-3/4 md:w-1/2" id="searchInput">
         <button type="button" class="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600" onclick="searchArticles()">جستجو</button>
@@ -20,18 +20,18 @@
 
   <main class="p-6">
     <div class="flex flex-wrap justify-center gap-4 mb-8" id="categoriesContainer">
-      <!-- دسته‌بندی‌ها به صورت داینامیک اضافه می‌شوند -->
+      
     </div>
 
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" id="articlesContainer">
-      <!-- مقالات به صورت داینامیک اضافه می‌شوند -->
+      
     </div>
   </main>
 
-  <footer class="bg-gray-700 dark:bg-gray-900 text-white text-center py-6">
+  <footer class="dark:bg-neutral-200 bg-gray-800text-4xl dark:text-zinc-800 text-center py-6">
     <div class="container mx-auto">
-      <p>&copy; 2024 وب سایت شما. تمامی حقوق محفوظ است.</p>
-      <div class="mt-4">
+      <p class="font-iran-S text-lg">&copy; تمامی سایت متعلق به شخص هست</p>
+      <div class="mt-4 font-iran-light">
         <a href="#" class="text-blue-400 hover:underline">تماس با ما</a> |
         <a href="#" class="text-blue-400 hover:underline">درباره ما</a> |
         <a href="#" class="text-blue-400 hover:underline">حریم خصوصی</a>
@@ -39,5 +39,6 @@
     </div>
   </footer>
 <script src="../js/blog.js" ></script>
+<script src="../js/them.js"></script>
 </body>
 </html>

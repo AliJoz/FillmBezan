@@ -71,16 +71,16 @@ function loadArticles(articles = blogData.articles) {
   articles.forEach((article) => {
     const articleCard = document.createElement("div");
     articleCard.className =
-      "p-4 border rounded-lg shadow-md bg-white dark:bg-gray-700 flex flex-col";
+      "p-4 border rounded-lg shadow-md dark:bg-white shadow bg-gray-700 dark:border-2 dark:border-zinc-700 shadow-slate-700  border-zinc-700 border-2 dark:border-zinc-800 dark:shadow-gray-900 flex flex-col";
     articleCard.innerHTML = `
-      <img src="${article.poster}" alt="${article.title}" class="rounded-lg mb-4">
-      <h3 class="text-lg font-bold text-gray-800 dark:text-white">
+      <img src="${article.poster}" alt="${article.title}" class="rounded-lg mb-4 w-[384px] h-[242px]">
+      <h3 class="text-lg font-bold dark:text-gray-800 text-zinc-100 font-iran-black tracking-wider">
         ${article.title}
       </h3>
-      <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">
+      <p class="text-sm dark:text-gray-600 text-neutral-200 mb-2">
         ${article.excerpt}
       </p>
-      <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
+      <p class="text-sm font-iranS-B dark:text-gray-500 text-neutral-300 tracking-wider mb-2">
         ژانر: ${article.genres.join(", ")}
       </p>
       <p class="text-sm text-yellow-500 font-bold mb-4">
