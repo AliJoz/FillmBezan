@@ -46,10 +46,9 @@
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
-.slide {
-  min-width: 25%;
-  box-sizing: border-box;
-}
+
+
+
 .bg_z {
   background-image: "url(../Style/img/bgover.jpg)";
 }
@@ -91,33 +90,39 @@
 .custom-bg:hover {
   @apply hover:bg-zinc-100  !important;
 }
-.role{
+.role {
   width: 64%;
 }
 
 /* meno */
 
 .hiddenMeno {
-  transform: translateY(-100%); 
-  transition: transform 0.3s ease-in-out; 
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
 }
 
 /* border film */
 
-.borderYel{
- @apply border border-yellow-400
+.borderYel {
+  @apply border border-yellow-400;
 }
 
 .modal {
   display: none;
 }
 .small-modal {
-
-  @apply w-96 h-48 text-sm font-iran-black pb-2 mt-24
+  @apply w-96 h-48 text-sm font-iran-black pb-2 mt-24;
 }
 
-
 /* detels donload */
-.borderHover{
-  @apply hover:bg-orange-500 dark:bg-neutral-300 dark:hover:rounded-xl dark:hover:border-zinc-400 dark:hover:border-2 hover:text-white px-4 py-2 cursor-pointer rounded
+.borderHover {
+  @apply hover:bg-orange-500 dark:bg-neutral-300 dark:hover:rounded-xl dark:hover:border-zinc-400 dark:hover:border-2 hover:text-white px-4 py-2 cursor-pointer rounded;
+}
+.glass {
+  background: rgba(255, 255, 255, 0.1); /* شفافیت پس‌زمینه */
+  backdrop-filter: blur(10px); /* محو کردن پس‌زمینه */
+  -webkit-backdrop-filter: blur(10px); /* برای سازگاری بهتر */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* حاشیه ظریف */
+  border-radius: 8px; /* گرد کردن گوشه‌ها */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* سایه ظریف */
 }

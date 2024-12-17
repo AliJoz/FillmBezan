@@ -55,16 +55,19 @@ let togglebtn = document.querySelectorAll(".btnThem");
 togglebtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     let changeIcons = document.querySelectorAll(".icon-light");
-    let c = document.querySelector(".changeName"); 
+    let c = document.querySelectorAll(".changeName"); 
 
-    
+    console.log(c)
     if (localStorage.theme === "dark") {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light"); 
       changeIcons.forEach(function (icon) {
         icon.setAttribute("href", "#sun"); 
       });
-      c.innerHTML = "تم روشن"; 
+      c.forEach((c) => {
+         c.innerHTML = "تم روشن"; 
+      });
+     
     } else {
       
       document.documentElement.classList.add("dark");
@@ -72,7 +75,10 @@ togglebtn.forEach((btn) => {
       changeIcons.forEach(function (icon) {
         icon.setAttribute("href", "#moon"); 
       });
-      c.innerHTML = "تم تیره"; 
+      c.forEach((c) => {
+        c.innerHTML = "تم تیره"; 
+     });
+      
     }
   });
 });
@@ -102,14 +108,24 @@ window.addEventListener('scroll', function() {
       menu.classList.remove('hiddenMeno');  
     }
   });
-  
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
+  // انتخاب عناصر
 
-  menuToggle.addEventListener('click', () => {
-    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', !isExpanded);
-    mobileMenu.classList.toggle('hidden');
-    mobileMenu.classList.toggle('flex');
-    
-  });
+
+const menuBtn = document.getElementById("menuBtn");
+const closeMenu = document.getElementById("closeMenu");
+const subMenu = document.getElementById("subMenu");
+const toggleTheme = document.getElementById("toggleTheme");
+const overlay = document.getElementById("overlay");
+const html = document.documentElement;
+
+// نمایش منو
+menuBtn.addEventListener("click", () => {
+  subMenu.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+
+});
+closeMenu.addEventListener('click',()=>{
+  subMenu.classList.add('hidden')
+  overlay.classList.add("hidden");
+})
+
