@@ -13,7 +13,7 @@ function nextSlide() {
     if (currentIndex + itemsPerSlide < totalSlides) {
         currentIndex += 1;
     } else {
-        currentIndex = 0; // بازگشت به شروع
+        currentIndex = 0; 
     }
     updateSlider();
     resetAutoSlide();
@@ -24,7 +24,7 @@ function prevSlide() {
     if (currentIndex > 0) {
         currentIndex -= 1;
     } else {
-        currentIndex = totalSlides - itemsPerSlide; // بازگشت به انتها
+        currentIndex = totalSlides - itemsPerSlide; 
     }
     updateSlider();
     resetAutoSlide();
@@ -41,12 +41,12 @@ function startAutoSlide() {
     }, 5000);
 }
 
-// اطمینان از تنظیم صحیح اسلایدر هنگام تغییر اندازه پنجره
+
 window.addEventListener('resize', () => {
     updateSlider();
 });
 
-// شروع اسلایدر خودکار
+
 startAutoSlide();
 
     // btn them 
@@ -103,4 +103,13 @@ window.addEventListener('scroll', function() {
     }
   });
   
-  
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+    
+  });
