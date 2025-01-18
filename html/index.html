@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="../public/logo/logo.png" type="image/png">
+    <link rel="shortcut icon" href="../public/logo/logo.png" type="image/png" />
 
     <link rel="stylesheet" href="../css/output.css" />
     <title>بزن فیلم</title>
@@ -97,194 +97,282 @@
         />
       </symbol>
 
-
       <symbol>
         <svg
-        id="star"
-        class="text-yellow-400"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-      >
-        <path
-          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.367 4.21a1 1 0 00.95.69h4.4c.969 0 1.371 1.24.588 1.81l-3.57 2.6a1 1 0 00-.364 1.118l1.367 4.21c.3.921-.755 1.688-1.54 1.118l-3.57-2.6a1 1 0 00-1.176 0l-3.57 2.6c-.784.57-1.838-.197-1.539-1.118l1.367-4.21a1 1 0 00-.364-1.118l-3.57-2.6c-.783-.57-.38-1.81.588-1.81h4.4a1 1 0 00.95-.69l1.367-4.21z"
-        />
-      </svg>
+          id="star"
+          class="text-yellow-400"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.367 4.21a1 1 0 00.95.69h4.4c.969 0 1.371 1.24.588 1.81l-3.57 2.6a1 1 0 00-.364 1.118l1.367 4.21c.3.921-.755 1.688-1.54 1.118l-3.57-2.6a1 1 0 00-1.176 0l-3.57 2.6c-.784.57-1.838-.197-1.539-1.118l1.367-4.21a1 1 0 00-.364-1.118l-3.57-2.6c-.783-.57-.38-1.81.588-1.81h4.4a1 1 0 00.95-.69l1.367-4.21z"
+          />
+        </svg>
       </symbol>
     </svg>
     <!-- Header Area -->
-    <header id="menu" class="w-full hidden md:block py-4 bg-transparent fixed top-0 z-10">
+    <header
+      id="menus"
+      class="w-full hidden md:block py-4 bg-transparent fixed top-0 z-10"
+    >
       <div class="container mx-auto flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center">
           <a href="index.html">
             <img src="/public/logo/logo.png" alt="Logo" class="h-10" />
           </a>
-          <span class="text-2xl font-bold ml-2 px-2 font-iranS-B tracking-wider text-neutral-200 dark:text-zinc-800"
+          <span
+            class="text-2xl font-bold ml-2 px-2 font-iranS-B tracking-wider text-neutral-200 dark:text-zinc-800"
             >بزن فیلم</span
           >
         </div>
 
         <!-- Navigation -->
-        <nav class="hidden md:flex space-x-3 lg:space-x-8 px-3 font-iranS-Med text-base tracking-wide -ml-[5rem]  text-neutral-200 dark:text-zinc-800">
-          <a href="#" class="hover:text-yellow-400 dark:hover:text-rose-600 px-6 ">خانه </a>
-          <a href="#movie" class="hover:text-yellow-400  dark:hover:text-rose-600">فیلم </a>
-          <a href="#" class="hover:text-yellow-400  dark:hover:text-rose-600">تلویزبون</a>
-          <a href="#" class="hover:text-yellow-400  dark:hover:text-rose-600">اشتراک خریدن</a>
-          <a href="./blog.html" class="hover:text-yellow-400  dark:hover:text-rose-600">بلاگ</a>
-          <a href="./contact.html" class="hover:text-yellow-400  dark:hover:text-rose-600">ارتباط باما</a>
+        <nav
+          class="hidden md:flex space-x-3 lg:space-x-8 px-3 font-iranS-Med text-base tracking-wide -ml-[5rem] text-neutral-200 dark:text-zinc-800"
+        >
+          <a
+            href="#"
+            class="hover:text-yellow-400 dark:hover:text-rose-600 px-6"
+            >خانه
+          </a>
+          <a
+            href="#movie"
+            class="hover:text-yellow-400 dark:hover:text-rose-600"
+            >فیلم
+          </a>
+          <a href="#" class="hover:text-yellow-400 dark:hover:text-rose-600"
+            >تلویزبون</a
+          >
+          <a href="#" class="hover:text-yellow-400 dark:hover:text-rose-600"
+            >اشتراک خریدن</a
+          >
+          <a
+            href="./blog.html"
+            class="hover:text-yellow-400 dark:hover:text-rose-600"
+            >بلاگ</a
+          >
+          <a
+            href="./contact.html"
+            class="hover:text-yellow-400 dark:hover:text-rose-600"
+            >ارتباط باما</a
+          >
         </nav>
 
         <!-- Header Actions -->
         <div class="hidden md:flex items-center space-x-2">
-          <button class="hover:text-yellow-400 dark:hover:text-rose-600 dark:text-zinc-900 relative" aria-label="Search" 
-          title="Search">
+          <button
+            class="hover:text-yellow-400 dark:hover:text-rose-600 dark:text-zinc-900 relative"
+            aria-label="Search"
+            title="Search"
+          >
             <svg class="h-7 w-7"><use href="#search"></use></svg>
           </button>
           <div class="relative"></div>
+          <!-- منوی ورود/ثبت نام -->
+           <div class="flex absolute left-0 px-2"> 
           <a
+            id="user"
             href="./Login.html"
-            class="lg:px-4 lg:py-2 text-base   dark:text-zinc-800 dark:bg-neutral-100 bg-yellow-400 rounded-md lg:font-semibold hover:bg-orange-400 dark:hover:bg-zinc-500 dark:hover:text-zinc-100 font-iran-light lg:font-iranS-Med lg:text-xl hover:text-neutral-200  tracking-wide text-zinc-50"
-            >ثبت نام
+            class="lg:px-4 lg:py-2 text-base dark:text-zinc-800 dark:bg-neutral-100 bg-yellow-400 rounded-md lg:font-semibold hover:bg-orange-400 dark:hover:bg-zinc-500 dark:hover:text-zinc-100 font-iran-light lg:font-iranS-Med lg:text-xl hover:text-neutral-200 tracking-wide text-zinc-50"
+          >
+            ثبت نام
           </a>
-        </div>
 
-        
-       
+          <!-- منوی کاربر (پس از ورود) -->
+          <div id="userMenu" class="hidden  px-3 ">
+
+            
+            <span id="usernameDisplay"></span>
+            <!-- نام کاربری -->
+            <button
+              id="logoutBtn"
+              class="bg-red-500 text-white py-1 px-4 rounded-md hover:bg-red-400"
+            >
+              خروج
+            </button>
+          </div></div>
+        </div>
       </div>
 
-      <div class="absolute left-64 top-3">
-        <a class="hidden  lg:flex btnThem mt-10 xl:mt-4 gap-x-2 font-iran-S text-lg" href="#">
+      <div class="absolute right-[300px] top-3">
+        <a
+          class="hidden lg:flex btnThem mt-10 xl:mt-4 gap-x-2 font-iran-S text-lg"
+          href="#"
+        >
           <svg class="w-8 h-8 dark:text-yellow-500">
             <use href="#moon" class="icon-light"></use>
           </svg>
-          <span class="changeName dark:text-zinc-700 mt-0.5 font-iran-black">تم تیره</span>
+          <span class="changeName dark:text-zinc-700 mt-0.5 font-iran-black"
+            >تم تیره</span
+          >
         </a>
       </div>
       <div class="flex absolute top-[3rem] left-[25rem] h-2">
-        <span class="text-lg   dark:text-zinc-800">_______________________________________________________</span>
+        <span class="text-lg dark:text-zinc-800"
+          >_______________________________________________________</span
+        >
       </div>
     </header>
 
-<!-- hambger meno -->
+    <!-- hambger meno -->
 
-<header id="menux" class="md:hidden  w-full h-screen py-4 bg-transparent fixed top-0 z-20 shadow-md ">
-  <div class="container mx-auto flex items-center justify-end px-2 lg:px-8">
-    <!-- Logo -->
-    <div class="flex items-center pr-8">
-      <a href="index.html" aria-label="Home">
-        <img src="/public/logo/logo.png" alt="Logo" class="h-10" />
-      </a>
-      <span class="text-2xl font-bold ml-2 px-2 font-iranS-B tracking-wider text-neutral-200 dark:text-zinc-800">
-        بزن فیلم
-      </span>
-    </div>
-
-<!-- Mobile Header -->
-<div class="  absolute left-0    h-16 md:hidden w-full p-4">
-  <div class="flex justify-between items-center">
-    <!-- Hamburger Menu Icon -->
-    <svg
-      id="menuBtn"
-      class="hambergermeno w-8 h-8  text-white dark:text-zinc-600 cursor-pointer"
+    <header
+      id="menux"
+      class="md:hidden w-full h-screen py-4 bg-transparent fixed top-0 z-20 shadow-md"
     >
-      <use href="#menu"></use>
-    </svg>
+      <div class="container mx-auto flex items-center justify-end px-2 lg:px-8">
+        <!-- Logo -->
+        <div class="flex items-center pr-8">
+          <a href="index.html" aria-label="Home">
+            <img src="/public/logo/logo.png" alt="Logo" class="h-10" />
+          </a>
+          <span
+            class="text-2xl font-bold ml-2 px-2 font-iranS-B tracking-wider text-neutral-200 dark:text-zinc-800"
+          >
+            بزن فیلم
+          </span>
+        </div>
 
-    
-  </div>
-</div>
+        <!-- Mobile Header -->
+        <div class="absolute left-0 h-16 md:hidden w-full p-4">
+          <div class="flex justify-between items-center">
+            <!-- Hamburger Menu Icon -->
+            <svg
+              id="menuBtn"
+              class="hambergermeno w-8 h-8 text-white dark:text-zinc-600 cursor-pointer"
+            >
+              <use href="#menu"></use>
+            </svg>
+          </div>
+        </div>
 
-<!-- Submenu -->
-<div
-  id="subMenu"
-  class="hidden  fixed top-0 left-0 w-full h-full  backdrop-blur-sm  z-50 p-5"
->
-  <div class="flex justify-between items-center  border-b pb-4">
-    <h3 class="text-orange-400 text-center font-iranS-B text-xl">منوی اصلی</h3>
-    <svg id="closeMenu" class="w-6 h-6 cursor-pointer">
-      <use href="#close"></use>
-    </svg>
-  </div>
+        <!-- Submenu -->
+        <div
+          id="subMenu"
+          class="hidden fixed top-0 left-0 w-full h-full backdrop-blur-sm z-50 p-5"
+        >
+          <div class="flex justify-between items-center border-b pb-4">
+            <h3 class="text-orange-400 text-center font-iranS-B text-xl">
+              منوی اصلی
+            </h3>
+            <svg id="closeMenu" class="w-6 h-6 cursor-pointer">
+              <use href="#close"></use>
+            </svg>
+          </div>
 
-  <!-- Menu Items -->
-  <ul class="glass mt-6 space-y-4 font-iran-S rounded-md p-4 dark:text-zinc-100">
-    <li class="flex items-center gap-x-2">
-      <svg class="w-5 h-5">
-        <use href="#Home"></use>
-      </svg>
-      <a href="#" class="hover:text-yellow-400 dark:hover:text-rose-600 transition-colors">
-        خانه
-      </a>
-    </li>
-    <li class="flex items-center gap-x-2">
-      <svg class="w-5 h-5">
-        <use href="#movie"></use>
-      </svg>
-      <a href="./Detels.html" class="hover:text-yellow-400 dark:hover:text-rose-600 transition-colors">
-        فیلم
-      </a>
-    </li>
-    <li class="flex items-center gap-x-2">
-      <svg class="w-5 h-5">
-        <use href="#tv"></use>
-      </svg>
-      <a href="#" class="hover:text-yellow-400 dark:hover:text-rose-600 transition-colors">
-        تلویزیون
-      </a>
-    </li>
-    <li class="flex items-center gap-x-2">
-      <svg class="w-5 h-5">
-        <use href="#subscription"></use>
-      </svg>
-      <a href="#" class="hover:text-yellow-400 dark:hover:text-rose-600 transition-colors">
-        اشتراک خریدن
-      </a>
-    </li>
-    <li class="flex items-center gap-x-2">
-      <svg class="w-5 h-5">
-        <use href="#briefcase"></use>
-      </svg>
-      <a href="./blog.html" class="hover:text-yellow-400 dark:hover:text-rose-600 transition-colors">
-        بلاگ
-      </a>
-    </li>
-    <li class="flex items-center gap-x-2">
-      <svg class="w-5 h-5">
-        <use href="#contact"></use>
-      </svg>
-      <a href="./contact.html" class="hover:text-yellow-400 dark:hover:text-rose-600 transition-colors">
-        ارتباط باما
-      </a>
-    </li>
-  </ul>
-  
-  
-  <!-- Footer Actions -->
-  <div class="border-t mt-6 pt-4 space-y-4 font-iran-black text-zinc-300">
-    <a href="#" class="flex items-center gap-x-2 hover:text-yellow-300 dark:hover:text-rose-600">
-      <svg class="w-6 h-6"><use href="#arrowLeft"></use></svg>
-      <span class="dark:hover:text-rose-600">ورود | ثبت‌نام</span>
-    </a>
-    <a href="#"  class="flex items-center text-lg gap-x-2 mr-4 btnThem">
-      <svg class="w-6 h-6 dark:text-yellow-400 text-orange-600"><use href="#moon" class="icon-light "></use></svg>
-      <span class="changeName dark:text-yellow-400 text-orange-600 mt-0.5 font-iranS-Med  hover:font-black hover:text-yellow-300 dark:hover:text-zinc-800  ">تم تیره</span>
-    </a>
-  </div>
-</div>
+          <!-- Menu Items -->
+          <ul
+            class="glass mt-6 space-y-4 font-iran-S rounded-md p-4 dark:text-zinc-100"
+          >
+            <li class="flex items-center gap-x-2">
+              <svg class="w-5 h-5">
+                <use href="#Home"></use>
+              </svg>
+              <a
+                href="#"
+                class="hover:text-yellow-400 dark:hover:text-rose-600 transition-colors"
+              >
+                خانه
+              </a>
+            </li>
+            <li class="flex items-center gap-x-2">
+              <svg class="w-5 h-5">
+                <use href="#movie"></use>
+              </svg>
+              <a
+                href="./Detels.html"
+                class="hover:text-yellow-400 dark:hover:text-rose-600 transition-colors"
+              >
+                فیلم
+              </a>
+            </li>
+            <li class="flex items-center gap-x-2">
+              <svg class="w-5 h-5">
+                <use href="#tv"></use>
+              </svg>
+              <a
+                href="#"
+                class="hover:text-yellow-400 dark:hover:text-rose-600 transition-colors"
+              >
+                تلویزیون
+              </a>
+            </li>
+            <li class="flex items-center gap-x-2">
+              <svg class="w-5 h-5">
+                <use href="#subscription"></use>
+              </svg>
+              <a
+                href="#"
+                class="hover:text-yellow-400 dark:hover:text-rose-600 transition-colors"
+              >
+                اشتراک خریدن
+              </a>
+            </li>
+            <li class="flex items-center gap-x-2">
+              <svg class="w-5 h-5">
+                <use href="#briefcase"></use>
+              </svg>
+              <a
+                href="./blog.html"
+                class="hover:text-yellow-400 dark:hover:text-rose-600 transition-colors"
+              >
+                بلاگ
+              </a>
+            </li>
+            <li class="flex items-center gap-x-2">
+              <svg class="w-5 h-5">
+                <use href="#contact"></use>
+              </svg>
+              <a
+                href="./contact.html"
+                class="hover:text-yellow-400 dark:hover:text-rose-600 transition-colors"
+              >
+                ارتباط باما
+              </a>
+            </li>
+          </ul>
 
-<div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+          <!-- Footer Actions -->
+          <div
+            class="border-t mt-6 pt-4 space-y-4 font-iran-black text-zinc-300"
+          >
+            <a
+              href="#"
+              class="flex items-center gap-x-2 hover:text-yellow-300 dark:hover:text-rose-600"
+            >
+              <svg class="w-6 h-6"><use href="#arrowLeft"></use></svg>
+              <span class="dark:hover:text-rose-600">ورود | ثبت‌نام</span>
+            </a>
+            <a href="#" class="flex items-center text-lg gap-x-2 mr-4 btnThem">
+              <svg class="w-6 h-6 dark:text-yellow-400 text-orange-600">
+                <use href="#moon" class="icon-light"></use>
+              </svg>
+              <span
+                class="changeName dark:text-yellow-400 text-orange-600 mt-0.5 font-iranS-Med hover:font-black hover:text-yellow-300 dark:hover:text-zinc-800"
+                >تم تیره</span
+              >
+            </a>
+          </div>
+        </div>
 
-  </div>
-</header>
+        <div
+          id="overlay"
+          class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+        ></div>
+      </div>
+    </header>
 
     <main class="w-full">
       <section
-        class="bg-bgover dark:bg-bgcoverLight   dark:bg-[37px_-30px]  relative h-screen flex items-center bg-cover bg-center"
+        class="bg-bgover dark:bg-bgcoverLight dark:bg-[37px_-30px] relative h-screen flex items-center bg-cover bg-center"
       >
         <!-- محتوای متن -->
-        <div class="absolute left-0 dark:right-0" >
-          <div class="container mx-auto space-y-8  lg:px-8">
-            <div class="hidden md:block  text-white dark:px-2 dark:pb-5 dark:w-[24rem] dark:border-zinc-800 dark:text-zinc-800 max-w-xl pl-7 dark:pl-0 space-y-8">
+        <div class="absolute left-0 dark:right-0">
+          <div class="container mx-auto space-y-8 lg:px-8">
+            <div
+              class="hidden md:block text-white dark:px-2 dark:pb-5 dark:w-[24rem] dark:border-zinc-800 dark:text-zinc-800 max-w-xl pl-7 dark:pl-0 space-y-8"
+            >
               <h6
                 class="text-7xl tracking-widest font-semibold mb-2 text-yellow-500"
               >
@@ -294,12 +382,14 @@
                 تلوزیون آنلاین
               </h2>
             </div>
-            <div class=" hidden md:flex  justify-center dark:absolute dark:right-50">
+            <div
+              class="hidden md:flex justify-center dark:absolute dark:right-50"
+            >
               <button
                 class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:bg-zinc-400 dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400"
               >
                 <span
-                  class=" relative font-iranS-B hover:font-iran-S tracking-wide text-base px-5 py-2.5 transition-all ease-in duration-75 bg-zinc-200 dark:bg-rose-400  dark:hover:text-zinc-800 dark:text-brown-400 rounded-md group-hover:bg-opacity-0"
+                  class="relative font-iranS-B hover:font-iran-S tracking-wide text-base px-5 py-2.5 transition-all ease-in duration-75 bg-zinc-200 dark:bg-rose-400 dark:hover:text-zinc-800 dark:text-brown-400 rounded-md group-hover:bg-opacity-0"
                 >
                   تماشا
                 </span>
@@ -308,10 +398,10 @@
           </div>
         </div>
 
-        <div class="flex justify-start items-center dark:hidden " >
+        <div class="flex justify-start items-center dark:hidden">
           <!-- بخش محتوای سمت چپ -->
           <div
-            class="text-white max-w-sm space-y-4 absolute bottom-0 right-[27rem] custom-mask h-full  "
+            class="text-white max-w-sm space-y-4 absolute bottom-0 right-[27rem] custom-mask h-full"
           >
             <img
               src="/public/img/blog.jpg"
@@ -333,295 +423,95 @@
       </section>
       <!-- >سلایدر ها  -->
       <section class="container mx-auto py-8">
-        <h1 id="movie"  class="text-3xl font-bold text-yellow-400 mb-8 font-iran-black dark:text-zinc-600">
+        <h1
+          id="movie"
+          class="text-3xl font-bold text-yellow-400 mb-8 font-iran-black dark:text-zinc-600"
+        >
           فیلم‌های جدید
         </h1>
-        <div  class="flex justify-between items-center">
+        <div class="flex justify-between items-center">
           <div
-            class="flex justify-start space-x-4 mb-8 font-iran-S tracking-wider  text-neutral-200 dark:text-zinc-800"
+            class="flex justify-start space-x-4 mb-8 font-iran-S tracking-wider text-neutral-200 dark:text-zinc-800"
           >
             <button
-              class="px-4 py-2 bg-gray-700  dark:bg-neutral-200 dark:text-zinc-900 text-white rounded-lg hover:bg-yellow-400 ml-3 borderYel hover:text-zinc-900 dark:hover:text-rose-700"
+              class="px-4 py-2 bg-gray-700 dark:bg-neutral-200 dark:text-zinc-900 text-white rounded-lg hover:bg-yellow-400 ml-3 borderYel hover:text-zinc-900 dark:hover:text-rose-700"
             >
               آنلاین
             </button>
             <button
-              class="px-4 py-2 bg-gray-700 dark:bg-neutral-200  dark:text-zinc-900 text-white rounded-lg hover:bg-yellow-400 hover:text-zinc-900 dark:hover:text-rose-700"
+              class="px-4 py-2 bg-gray-700 dark:bg-neutral-200 dark:text-zinc-900 text-white rounded-lg hover:bg-yellow-400 hover:text-zinc-900 dark:hover:text-rose-700"
             >
               سینمایی
             </button>
             <button
-              class="px-4 py-2 bg-gray-700 dark:bg-neutral-200  dark:text-zinc-900 text-white rounded-lg hover:bg-yellow-400 hover:text-zinc-900 dark:hover:text-rose-700"
+              class="px-4 py-2 bg-gray-700 dark:bg-neutral-200 dark:text-zinc-900 text-white rounded-lg hover:bg-yellow-400 hover:text-zinc-900 dark:hover:text-rose-700"
             >
               انیمیشن
             </button>
           </div>
           <div class="flex gap-x-3 pl-4">
             <button
-            id="prevButton"
+              id="prevButton"
               onclick="prevSlide()"
               class="p-3 transform relative -translate-y-1/2 dark:bg-neutral-300 dark:text-zinc-800 bg-gray-700 text-white rounded-xl h-6 hover:bg-yellow-400"
             >
-             <span class="absolute top-0 left-3">‹</span> 
+              <span class="absolute top-0 left-3">‹</span>
             </button>
             <button
-            id="nextButton"
+              id="nextButton"
               onclick="nextSlide()"
-              class="transform -translate-y-1/2 relative bg-gray-700  dark:bg-neutral-300  dark:text-zinc-800 text-white rounded-full p-3 h-6 hover:bg-yellow-400"
+              class="transform -translate-y-1/2 relative bg-gray-700 dark:bg-neutral-300 dark:text-zinc-800 text-white rounded-full p-3 h-6 hover:bg-yellow-400"
             >
-            <span class="absolute top-0 left-2 ">  ›</span>
+              <span class="absolute top-0 left-2"> ›</span>
             </button>
           </div>
         </div>
         <!-- Slider Container -->
-        <div class="relative slider-container" >
+        <div class="relative slider-container">
           <!-- Slider Track -->
-          <a id="slider" href="./Detels.html" class="slider flex transition-transform duration-500 ease-in-out">
-            <!-- Slide 1 -->
-            <div class="slide box-border xs:min-w-[80%] sm:min-w-[60%] md:min-w-[40%] lg:min-w-[25%]   p-4">
-              <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700">
-                <img
-                  src="/public/img/baner/B1.jpg"
-                  alt="Women's Day"
-                  class="w-full h-64 object-cover"
-                />
-                 <div class="p-4 dark:bg-neutral-200  text-white dark:text-zinc-900  ">
-                  <h3 class="text-xl font-semibold font-iranS-Med text-left">
-                    Women's Day
-                  </h3>
-                  <div
-                    class="flex justify-between items-center text-yellow-400 mt-2 dark:text-zinc-900"
-                  >
-                    <div class="flex gap-x-3 items-center">
-                      <span class="text-sm font-thin">2021</span>
-                      <span
-                        class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
-                        >HD</span
-                      >
-                    </div>
-                    <div class="flex justify-end">
-                      <span class="flex items-center gap-x-2">
-                        <svg class="w-5 h-5 "> <use href="#star"></use></svg>
-                        <span class="text-sm">3.5</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Slide 2 -->
-            <div class="slide slide box-border xs:min-w-[80%] sm:min-w-[60%] md:min-w-[40%] lg:min-w-[25%]  p-4">
-              <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700 ">
-                <img
-                  src="/public/img/baner/B2.jpg"
-                  alt="The Perfect Match"
-                  class="w-full h-64 object-cover"
-                />
-                  <div class="p-4 dark:bg-neutral-200  text-white dark:text-zinc-900 ">
-                  <h3 class="text-xl font-semibold font-iranS-Med text-left">
-                    The Perfect Match
-                  </h3>
-                  <div
-                    class="flex justify-between items-center text-yellow-400 mt-2 dark:text-zinc-900"
-                  >
-                    <div class="flex gap-x-3 items-center font-thin">
-                      <span class="text-sm">2021</span>
-                      <span
-                        class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
-                        >4K</span
-                      >
-                    </div>
-                    <div>
-                      <span class="flex items-center gap-x-2">
-                        <svg class="w-5 h-5 "> <use href="#star"></use></svg>
-                        <span class="text-sm">3.5</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Slide 3 -->
-            <div class="lg:w-2/4slide box-border xs:min-w-[80%] sm:min-w-[60%] md:min-w-[40%] lg:min-w-[25%] slide p-4 ">
-              <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700">
-                <img
-                  src="/public/img/baner/B3.jpg"
-                  alt="The Dog Woof"
-                  class="w-full h-64 object-cover"
-                />
-                  <div class="p-4 dark:bg-neutral-200  text-white dark:text-zinc-900">
-                  <h3 class="text-left text-xl font-semibold font-iranS-Med">
-                    The Dog Woof
-                  </h3>
-                  <div
-                    class="flex justify-between items-center text-yellow-400 mt-2 dark:text-zinc-900"
-                  >
-                    <div class="flex gap-x-3 items-center font-thin">
-                      <span class="text-sm">2021</span>
-                      <span
-                        class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
-                        >HD</span
-                      >
-                    </div>
-                    <div>
-                      <span class="flex items-center gap-x-2">
-                        <svg class="w-5 h-5 "> <use href="#star"></use></svg>
-                        <span class="text-sm">3.5</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Slide 4 -->
-            <div class="lg:w-2/4slide box-border xs:min-w-[80%] sm:min-w-[60%] md:min-w-[40%] lg:min-w-[25%] slide p-4 ">
-              <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700">
-                <img
-                  src="/public/img/baner/B4.jpg "
-                  alt="The Easy Reach"
-                  class="w-full h-64 object-cover"
-                />
-                  <div class="p-4 dark:bg-neutral-200  text-white dark:text-zinc-900 ">
-                  <h3 class="text-xl font-semibold font-iranS-Med text-left">
-                    The Easy Reach
-                  </h3>
-                  <div
-                    class="flex justify-between items-center text-yellow-400 mt-2 dark:text-zinc-900"
-                  >
-                    <div class="flex gap-x-3 items-center font-thin">
-                      <span class="text-sm">2021</span>
-                      <span
-                        class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
-                        >8K</span
-                      >
-                    </div>
-                    <div>
-                      <span class="flex items-center gap-x-2">
-                        <svg class="w-5 h-5 "> <use href="#star"></use></svg>
-                        <span class="text-sm">3.5</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Slide 5 -->
-            <div class="lg:w-2/4slide box-border xs:min-w-[80%] sm:min-w-[60%] md:min-w-[40%] lg:min-w-[25%] slide p-4 ">
-              <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700">
-                <img
-                  src="/public/img/baner/B3.jpg "
-                  alt="The Easy Reach"
-                  class="w-full h-64 object-cover"
-                />
-                  <div class="p-4 dark:bg-neutral-200  text-white dark:text-zinc-900 ">
-                  <h3 class="text-xl font-semibold font-iranS-Med text-left">
-                    The Easy Reach5
-                  </h3>
-                  <div
-                    class="flex justify-between items-center text-yellow-400 mt-2 dark:text-zinc-900"
-                  >
-                    <div class="flex gap-x-3 items-center font-thin">
-                      <span class="text-sm">2021</span>
-                      <span
-                        class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
-                        >8K</span
-                      >
-                    </div>
-                    <div>
-                      <span class="flex items-center gap-x-2">
-                        <svg class="w-5 h-5 "> <use href="#star"></use></svg>
-                        <span class="text-sm">3.5</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Slide 5 -->
-            <div class="lg:w-2/4slide box-border xs:min-w-[80%] sm:min-w-[60%] md:min-w-[40%] lg:min-w-[25%] slide p-4 ">
-              <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700">
-                <img
-                  src="/public/img/baner/B3.jpg "
-                  alt="The Easy Reach"
-                  class="w-full h-64 object-cover"
-                />
-                  <div class="p-4 dark:bg-neutral-200  text-white dark:text-zinc-900 ">
-                  <h3 class="text-xl font-semibold font-iranS-Med text-left">
-                    The Easy Reach5
-                  </h3>
-                  <div
-                    class="flex justify-between items-center text-yellow-400 mt-2 dark:text-zinc-900"
-                  >
-                    <div class="flex gap-x-3 items-center font-thin">
-                      <span class="text-sm">2021</span>
-                      <span
-                        class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
-                        >8K</span
-                      >
-                    </div>
-                    <div>
-                      <span class="flex items-center gap-x-2">
-                        <svg class="w-5 h-5 "> <use href="#star"></use></svg>
-                        <span class="text-sm">3.5</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Slide 5 -->
-            <div class="lg:w-2/4slide box-border xs:min-w-[80%] sm:min-w-[60%] md:min-w-[40%] lg:min-w-[25%] slide p-4 ">
-              <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700">
-                <img
-                  src="/public/img/baner/B3.jpg "
-                  alt="The Easy Reach"
-                  class="w-full h-64 object-cover"
-                />
-                  <div class="p-4 dark:bg-neutral-200  text-white dark:text-zinc-900 ">
-                  <h3 class="text-xl font-semibold font-iranS-Med text-left">
-                    The Easy Reach5
-                  </h3>
-                  <div
-                    class="flex justify-between items-center text-yellow-400 mt-2 dark:text-zinc-900"
-                  >
-                    <div class="flex gap-x-3 items-center font-thin">
-                      <span class="text-sm">2021</span>
-                      <span
-                        class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
-                        >8K</span
-                      >
-                    </div>
-                    <div>
-                      <span class="flex items-center gap-x-2">
-                        <svg class="w-5 h-5 "> <use href="#star"></use></svg>
-                        <span class="text-sm">3.5</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-
+          <div id="slider" class="slider flex transition-transform duration-500 ease-in-out"></div>
           <!-- Navigation Buttons -->
         </div>
+        
       </section>
 
       <section>
         <!-- Header Section -->
         <div class="text-center py-8">
-          <h1 class="text-3xl font-bold text-yellow-400 dark:text-zinc-600">10 فیلم پر بازدید</h1>
+          <h1 class="text-3xl font-bold text-yellow-400 dark:text-zinc-600">
+            10 فیلم پر بازدید
+          </h1>
         </div>
 
         <!-- Category Selection Bar -->
-        <div class="flex justify-center items-center space-x-6 mb-6 text-lg font-iranS-Med ">
-          <button class="text-yellow-400 border-b-2 dark:text-rose-600 border-yellow-400 dark:border-rose-500 pb-1">
+        <div
+          class="flex justify-center items-center space-x-6 mb-6 text-lg font-iranS-Med"
+        >
+          <button
+            class="text-yellow-400 border-b-2 dark:text-rose-600 border-yellow-400 dark:border-rose-500 pb-1"
+          >
             معمایی
           </button>
-          <button class="text-gray-300 dark:text-zinc-800 hover:text-yellow-400  dark:hover:text-rose-600 pr-4">درام</button>
-          <button class="text-gray-300 dark:text-zinc-800 hover:text-yellow-400  dark:hover:text-rose-600">اکشن</button>
-          <button class="text-gray-300 dark:text-zinc-800 hover:text-yellow-400  dark:hover:text-rose-600">فانتری</button>
-          <button class="text-gray-300 dark:text-zinc-800 hover:text-yellow-400  dark:hover:text-rose-600">تخیلی</button>
+          <button
+            class="text-gray-300 dark:text-zinc-800 hover:text-yellow-400 dark:hover:text-rose-600 pr-4"
+          >
+            درام
+          </button>
+          <button
+            class="text-gray-300 dark:text-zinc-800 hover:text-yellow-400 dark:hover:text-rose-600"
+          >
+            اکشن
+          </button>
+          <button
+            class="text-gray-300 dark:text-zinc-800 hover:text-yellow-400 dark:hover:text-rose-600"
+          >
+            فانتری
+          </button>
+          <button
+            class="text-gray-300 dark:text-zinc-800 hover:text-yellow-400 dark:hover:text-rose-600"
+          >
+            تخیلی
+          </button>
         </div>
 
         <!-- Movies Grid -->
@@ -630,13 +520,15 @@
           href="./Detels.html"
         >
           <!-- Movie Card 1 -->
-          <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700">
+          <div
+            class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700"
+          >
             <img
               src="/public/img/baner/B1.jpg"
               alt="Women's Day"
               class="w-full h-64 object-cover"
             />
-              <div class="p-4 dark:bg-neutral-200  text-white dark:text-zinc-900 ">
+            <div class="p-4 dark:bg-neutral-200 text-white dark:text-zinc-900">
               <h3 class="text-xl font-semibold font-iranS-Med text-left">
                 Women's Day
               </h3>
@@ -652,7 +544,7 @@
                 </div>
                 <div class="flex justify-end">
                   <span class="flex items-center gap-x-2">
-                    <svg class="w-5 h-5 "> <use href="#star"></use></svg>
+                    <svg class="w-5 h-5"><use href="#star"></use></svg>
                     <span class="text-sm">3.5</span>
                   </span>
                 </div>
@@ -660,13 +552,15 @@
             </div>
           </div>
           <!-- Movie Card 2 -->
-          <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700">
+          <div
+            class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700"
+          >
             <img
               src="/public/img/baner/B2.jpg"
               alt="Women's Day"
               class="w-full h-64 object-cover"
             />
-              <div class="p-4 dark:bg-neutral-200  text-white dark:text-zinc-900 ">
+            <div class="p-4 dark:bg-neutral-200 text-white dark:text-zinc-900">
               <h3 class="text-xl font-semibold font-iranS-Med text-left">
                 Women's Day
               </h3>
@@ -682,7 +576,7 @@
                 </div>
                 <div class="flex justify-end">
                   <span class="flex items-center gap-x-2">
-                    <svg class="w-5 h-5 "> <use href="#star"></use></svg>
+                    <svg class="w-5 h-5"><use href="#star"></use></svg>
                     <span class="text-sm">3.5</span>
                   </span>
                 </div>
@@ -690,29 +584,31 @@
             </div>
           </div>
           <!-- Movie Card 3 -->
-          <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700">
+          <div
+            class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700"
+          >
             <img
               src="/public/img/baner/B3.jpg"
               alt="Women's Day"
               class="w-full h-64 object-cover"
             />
-             <div class="p-4 dark:bg-neutral-200  text-white dark:text-zinc-900">
+            <div class="p-4 dark:bg-neutral-200 text-white dark:text-zinc-900">
               <h3 class="text-xl font-semibold font-iranS-Med text-left">
                 Women's Day
               </h3>
               <div
-                class="flex justify-between items-center text-yellow-400 mt-2 dark:text-zinc-900 "
+                class="flex justify-between items-center text-yellow-400 mt-2 dark:text-zinc-900"
               >
                 <div class="flex gap-x-3 items-center">
-                  <span class="text-sm font-thin ">2021</span>
+                  <span class="text-sm font-thin">2021</span>
                   <span
-                    class="ml-4 px-2 py-1 rounded text-xs border border-white  dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
+                    class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
                     >HD</span
                   >
                 </div>
                 <div class="flex justify-end">
                   <span class="flex items-center gap-x-2">
-                    <svg class="w-5 h-5 "> <use href="#star"></use></svg>
+                    <svg class="w-5 h-5"><use href="#star"></use></svg>
                     <span class="text-sm">3.5</span>
                   </span>
                 </div>
@@ -720,29 +616,31 @@
             </div>
           </div>
           <!-- Movie Card 4 -->
-          <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700">
+          <div
+            class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700"
+          >
             <img
-              src="/public/img/baner/B4.jpg"
+              src="../public/img/baner/B4.jpg"
               alt="Women's Day"
               class="w-full h-64 object-cover"
             />
-             <div class="p-4 dark:bg-neutral-200 text-white dark:text-zinc-900">
+            <div class="p-4 dark:bg-neutral-200 text-white dark:text-zinc-900">
               <h3 class="text-xl font-semibold font-iranS-Med text-left">
                 Women's Day
               </h3>
               <div
-                class="flex justify-between items-center text-yellow-400   mt-2 dark:text-zinc-900"
+                class="flex justify-between items-center text-yellow-400 mt-2 dark:text-zinc-900"
               >
                 <div class="flex gap-x-3 items-center">
                   <span class="text-sm font-thin">2021</span>
                   <span
-                    class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin  dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
+                    class="ml-4 px-2 py-1 rounded text-xs border border-white dark:border-black font-thin dark:hover:bg-rose-400 hover:bg-yellow-300 hover:text-black"
                     >HD</span
                   >
                 </div>
                 <div class="flex justify-end">
                   <span class="flex items-center gap-x-2">
-                    <svg class="w-5 h-5 "> <use href="#star"></use></svg>
+                    <svg class="w-5 h-5"><use href="#star"></use></svg>
                     <span class="text-sm">3.5</span>
                   </span>
                 </div>
@@ -753,7 +651,7 @@
         </a>
       </section>
     </main>
-    <footer class="bg-gray-900 dark:bg-neutral-200   py-8">
+    <footer class="bg-gray-900 dark:bg-neutral-200 py-8">
       <!-- Top Footer Section -->
       <div class="container mx-auto px-4">
         <div
@@ -763,12 +661,14 @@
           <div class="mb-6 lg:mb-0 lg:w-1/4 flex items-center gap-x-4">
             <a href="index.html">
               <img
-                src="/public/logo/logo.png"
+                src="../public/logo/logo.png"
                 alt="بزن فیلم لوگو"
                 class="w-10"
               />
             </a>
-            <span class="dark:text-zinc-800 font-iran-black text-2xl"> بزن فیلم</span>
+            <span class="dark:text-zinc-800 font-iran-black text-2xl">
+              بزن فیلم</span
+            >
           </div>
 
           <!-- Menu and Search Section -->
@@ -776,24 +676,42 @@
             class="flex-1 flex flex-col lg:flex-row items-center lg:justify-between"
           >
             <!-- Menu Links -->
-            <nav class="mb-6 lg:mb-0 ">
-              <ul class="flex space-x-6 text-gray-300  dark:text-zinc-900 font-iranS-Med text-lg">
+            <nav class="mb-6 lg:mb-0">
+              <ul
+                class="flex space-x-6 text-gray-300 dark:text-zinc-900 font-iranS-Med text-lg"
+              >
                 <li>
-                  <a href="index.html" class="hover:text-yellow-400  dark:hover:text-rose-600 pl-5"
+                  <a
+                    href="index.html"
+                    class="hover:text-yellow-400 dark:hover:text-rose-600 pl-5"
                     >خانه</a
                   >
                 </li>
                 <li>
-                  <a href="index.html" class="hover:text-yellow-400  dark:hover:text-rose-600">فیلم</a>
+                  <a
+                    href="index.html"
+                    class="hover:text-yellow-400 dark:hover:text-rose-600"
+                    >فیلم</a
+                  >
                 </li>
                 <li>
-                  <a href="index.html" class="hover:text-yellow-400  dark:hover:text-rose-600">تلوزیون</a>
+                  <a
+                    href="index.html"
+                    class="hover:text-yellow-400 dark:hover:text-rose-600"
+                    >تلوزیون</a
+                  >
                 </li>
                 <li>
-                  <a href="index.html" class="hover:text-yellow-400  dark:hover:text-rose-600">وبلاگ</a>
+                  <a
+                    href="index.html"
+                    class="hover:text-yellow-400 dark:hover:text-rose-600"
+                    >وبلاگ</a
+                  >
                 </li>
                 <li>
-                  <a href="pricing.html" class="hover:text-yellow-400  dark:hover:text-rose-600"
+                  <a
+                    href="pricing.html"
+                    class="hover:text-yellow-400 dark:hover:text-rose-600"
                     >اشتراک گذاری</a
                   >
                 </li>
@@ -809,9 +727,14 @@
                 placeholder="فیلم مورد علاقه"
                 class="bg-gray-800 dark:bg-neutral-300 text-gray-400 placeholder-gray-500 px-4 py-2 w-full focus:outline-none rounded-l-full"
               />
-              <button class="hover:text-yellow-400  dark:hover:text-rose-600 px-4" aria-label="Search" 
-              title="Search">
-                <svg class="w-6 h-6 dark:text-black"> <use href="#search"></use> </svg>
+              <button
+                class="hover:text-yellow-400 dark:hover:text-rose-600 px-4"
+                aria-label="Search"
+                title="Search"
+              >
+                <svg class="w-6 h-6 dark:text-black">
+                  <use href="#search"></use>
+                </svg>
               </button>
             </div>
           </div>
@@ -823,15 +746,37 @@
         >
           <!-- Quick Links -->
           <div class="mb-6 md:mb-0">
-            <ul class="flex justify-center space-x-6 text-sm text-gray-400 dark:text-zinc-900 font-iranS-Med ">
-              <li><a href="#" class="hover:text-yellow-400  dark:hover:text-rose-600 ml-4">FAQ</a></li>
+            <ul
+              class="flex justify-center space-x-6 text-sm text-gray-400 dark:text-zinc-900 font-iranS-Med"
+            >
               <li>
-                <a href="#" class="hover:text-yellow-400  dark:hover:text-rose-600 ml-4">ارتباط باما </a>
+                <a
+                  href="#"
+                  class="hover:text-yellow-400 dark:hover:text-rose-600 ml-4"
+                  >FAQ</a
+                >
               </li>
               <li>
-                <a href="#" class="hover:text-yellow-400  dark:hover:text-rose-600">وبلاگ</a>
+                <a
+                  href="#"
+                  class="hover:text-yellow-400 dark:hover:text-rose-600 ml-4"
+                  >ارتباط باما
+                </a>
               </li>
-              <li><a href="#" class="hover:text-yellow-400  dark:hover:text-rose-600">اشتراک</a></li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-yellow-400 dark:hover:text-rose-600"
+                  >وبلاگ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-yellow-400 dark:hover:text-rose-600"
+                  >اشتراک</a
+                >
+              </li>
             </ul>
           </div>
 
@@ -844,7 +789,7 @@
                   class="flex items-center justify-center ml-3 dark:hover:bg-gray-800 dark:bg-neutral-100/85 bg-gray-800 hover:bg-neutral-100/85 rounded-full w-10 h-10 transition duration-300"
                 >
                   <img
-                    src="/public/svg/whatsapp.svg"
+                    src="../public/svg/whatsapp.svg"
                     alt="whatsapp"
                     class="w-5 h-5"
                   />
@@ -856,7 +801,7 @@
                   class="flex items-center justify-center dark:hover:bg-gray-800 dark:bg-neutral-100/85 bg-gray-800 hover:bg-neutral-100/85 rounded-full w-10 h-10 transition duration-300"
                 >
                   <img
-                    src="/public/svg/twitter.svg"
+                    src="../public/svg/twitter.svg"
                     alt="twitter"
                     class="w-5 h-5"
                   />
@@ -868,7 +813,7 @@
                   class="flex items-center justify-center dark:hover:bg-gray-800 dark:bg-neutral-100/85 bg-gray-800 hover:bg-neutral-100/85 rounded-full w-10 h-10 transition duration-300"
                 >
                   <img
-                    src="/public/svg/facebook.svg"
+                    src="../public/svg/facebook.svg"
                     alt="facebook"
                     class="w-5 h-5"
                   />
@@ -880,7 +825,7 @@
                   class="flex items-center justify-center dark:hover:bg-gray-800 dark:bg-neutral-100/85 bg-gray-800 hover:bg-neutral-100/85 rounded-full w-10 h-10 transition duration-300"
                 >
                   <img
-                    src="/public/svg/instagram.svg"
+                    src="../public/svg/instagram.svg"
                     alt="instagram"
                     class="w-5 h-5"
                   />
@@ -899,7 +844,9 @@
           <!-- Copyright Text -->
           <p>
             © 2024. تمامی صفحه در
-            <a href="index.html" class="text-yellow-400 dark:text-rose-700 no-underline text-lg hover:underline hover:underline-offset-4"
+            <a
+              href="index.html"
+              class="text-yellow-400 dark:text-rose-700 no-underline text-lg hover:underline hover:underline-offset-4"
               >بزن فیلم</a
             >
           </p>
@@ -908,5 +855,6 @@
     </footer>
 
     <script src="../js/js.js"></script>
+    
   </body>
 </html>
