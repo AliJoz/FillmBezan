@@ -1,18 +1,18 @@
 <?php
-// فعال کردن نمایش خطا برای اشکال‌زدایی
+
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// تنظیم هدر پاسخ به JSON
+
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
-// مسیر فایل لاگ
+
 $logFile = 'request.log';
 session_start();
-// تابع برای ثبت لاگ‌ها
+
 function logData($message)
 {
     global $logFile;
@@ -21,13 +21,13 @@ function logData($message)
     file_put_contents($logFile, "[$timestamp] [IP: $ip] $message\n", FILE_APPEND);
 }
 
-// اطلاعات اتصال به پایگاه داده
+
 $host = "localhost";
 $username = "root";
 $password = "";
 $dbname = "Filmbezan";
 
-// تلاش برای اتصال به دیتابیس
+
 try {
     $conn = new mysqli($host, $username, $password, $dbname);
     if ($conn->connect_error) {
@@ -43,7 +43,7 @@ try {
     exit;
 }
 
-// بررسی متد درخواست
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     logData("درخواست نامعتبر با متد " . $_SERVER['REQUEST_METHOD']);
     echo json_encode([
@@ -53,13 +53,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// دریافت داده‌های ورودی
+
 $input = file_get_contents("php://input");
 logData("داده خام دریافت‌شده: $input");
 
 $data = json_decode($input, true);
 
-// بررسی صحت داده‌های ورودی
+
 if (!isset($data['username']) || !isset($data['password'])) {
     logData("داده‌های ورودی نامعتبر: " . json_encode($data));
     echo json_encode([
@@ -69,14 +69,14 @@ if (!isset($data['username']) || !isset($data['password'])) {
     exit;
 }
 
-$email = trim($data['username']); // دریافت ایمیل از کلید username
+$email = trim($data['username']); 
 $password = trim($data['password']);
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 logData("ایمیل دریافت‌شده: $email");
 
 try {
-    // جستجوی ایمیل در جدول
+
     $query = "SELECT * FROM users WHERE Email = ?";
     $stmt = $conn->prepare($query);
 
@@ -123,7 +123,7 @@ try {
         "message" => "خطا در پردازش درخواست."
     ]);
 } finally {
-    // بستن اتصال
+
     if (isset($stmt)) {
         $stmt->close();
     }

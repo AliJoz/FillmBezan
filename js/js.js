@@ -1,9 +1,9 @@
-// Variables
+
 let currentIndex = 0;
 let itemsPerSlide = 4;
 let autoSlideInterval;
 
-// Update the slider position
+
 function updateSlider() {
   const slider = document.getElementById("slider");
   if (slider) {
@@ -15,13 +15,13 @@ function updateSlider() {
   }
 }
 
-// Adjust items per slide based on screen width
+
 function updateItemsPerSlide() {
   const screenWidth = window.innerWidth;
   itemsPerSlide = screenWidth < 640 ? 1 : screenWidth < 768 ? 2 : screenWidth < 1024 ? 3 : 4;
 }
 
-// Navigate to the next slide
+
 function nextSlide() {
   const totalSlides = document.querySelectorAll(".slide").length;
   currentIndex = currentIndex + itemsPerSlide < totalSlides ? currentIndex + 1 : 0;
@@ -29,7 +29,7 @@ function nextSlide() {
   resetAutoSlide();
 }
 
-// Navigate to the previous slide
+
 function prevSlide() {
   const totalSlides = document.querySelectorAll(".slide").length;
   currentIndex = currentIndex > 0 ? currentIndex - 1 : totalSlides - itemsPerSlide;
@@ -37,18 +37,18 @@ function prevSlide() {
   resetAutoSlide();
 }
 
-// Reset the auto-slide interval
+
 function resetAutoSlide() {
   clearInterval(autoSlideInterval);
   startAutoSlide();
 }
 
-// Start the auto-slide interval
+
 function startAutoSlide() {
   autoSlideInterval = setInterval(nextSlide, 5000);
 }
 
-// Initialize slider and responsive settings
+
 window.addEventListener("resize", () => {
   updateItemsPerSlide();
   updateSlider();
@@ -56,7 +56,7 @@ window.addEventListener("resize", () => {
 updateItemsPerSlide();
 startAutoSlide();
 
-// Theme toggle button
+
 const toggleButtons = document.querySelectorAll(".btnThem");
 
 toggleButtons.forEach((btn) => {
@@ -75,7 +75,6 @@ toggleButtons.forEach((btn) => {
   });
 });
 
-// Set initial theme on DOM load
 window.addEventListener("DOMContentLoaded", () => {
   const isDark = localStorage.theme === "dark";
   document.documentElement.classList.toggle("dark", isDark);
@@ -88,7 +87,7 @@ window.addEventListener("DOMContentLoaded", () => {
     element.textContent = isDark ? "تم تیره" : "تم روشن";
   });
 
-  // Load movies from the server
+
   fetch("http://localhost/proje/php/getMovie.php")
     .then((response) => {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -129,7 +128,7 @@ window.addEventListener("DOMContentLoaded", () => {
     .catch((error) => console.error("Error loading movies:", error));
 });
 
-// Menu visibility on scroll
+
 window.addEventListener("scroll", () => {
   const menu = document.getElementById("menus");
   if (menu) {
@@ -137,7 +136,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Toggle menu visibility
+
 const menuBtn = document.getElementById("menuBtn");
 const closeMenu = document.getElementById("closeMenu");
 const subMenu = document.getElementById("subMenu");
@@ -155,7 +154,7 @@ if (menuBtn && closeMenu && subMenu && overlay) {
   });
 }
 
-// Display username from URL
+
 const user = document.getElementById("user");
 const urlParams = new URLSearchParams(window.location.search);
 const username = urlParams.get("username");
@@ -165,7 +164,7 @@ if (username && user) {
   document.getElementById("userMenu")?.classList.remove("hidden");
 }
 
-// Logout button functionality
+
 const logoutBtn = document.getElementById("logoutBtn");
 if (logoutBtn) {
   logoutBtn.addEventListener("click", () => {

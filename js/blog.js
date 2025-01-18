@@ -50,7 +50,7 @@ const blogData = {
   ],
 };
 
-// افزودن دسته‌بندی‌ها
+
 function loadCategories() {
   const categoriesContainer = document.getElementById("categoriesContainer");
   blogData.categories.forEach((category) => {
@@ -66,8 +66,7 @@ function loadCategories() {
 // افزودن مقالات
 function loadArticles(articles = blogData.articles) {
   const articlesContainer = document.getElementById("articlesContainer");
-  articlesContainer.innerHTML = ""; // پاک کردن مقالات قبلی
-
+  articlesContainer.innerHTML = ""; 
   articles.forEach((article) => {
     const articleCard = document.createElement("div");
     articleCard.className =
@@ -92,7 +91,7 @@ function loadArticles(articles = blogData.articles) {
   });
 }
 
-// فیلتر کردن مقالات بر اساس دسته‌بندی
+
 function filterArticlesByCategory(category) {
   const filteredArticles = blogData.articles.filter(
     (article) => article.category === category
@@ -100,7 +99,7 @@ function filterArticlesByCategory(category) {
   loadArticles(filteredArticles);
 }
 
-// جستجوی مقالات
+
 function searchArticles() {
   const searchInput = document.getElementById("searchInput").value;
   const filteredArticles = blogData.articles.filter((article) =>
@@ -109,6 +108,6 @@ function searchArticles() {
   loadArticles(filteredArticles);
 }
 
-// بارگذاری اولیه
+
 loadCategories();
 loadArticles();

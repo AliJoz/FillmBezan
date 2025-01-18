@@ -1,4 +1,4 @@
-// انتخاب تمام دکمه‌های رنگی
+
 const colorButtons = document.querySelectorAll('.color-btn');
 const circle1 = document.querySelector('.circle1');
 const circle2 = document.querySelector('.circle2');
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const successUserMessage = document.getElementById("successUserMessage");
     const loginContainer = document.getElementById("loginContainer");
 
-    // بررسی اطلاعات ثبت‌نام از Local Storage
+    
     const registrationInfo = JSON.parse(localStorage.getItem("registrationInfo"));
     
     if (registrationInfo) {
@@ -29,18 +29,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const elapsedTime = (Date.now() - timestamp) / 1000; // مدت زمان گذشته از ثبت‌نام به ثانیه
 
         if (elapsedTime < 120) {
-            // نمایش پیام موفقیت
+           
             successUserMessage.textContent = `${registeredUsername}، شما ثبت‌نام کرده‌اید.`;
             successMessage.classList.remove("hidden");
             loginContainer.classList.add("hidden");
         } else {
-            // حذف اطلاعات منقضی‌شده و نمایش فرم ورود
+           
             localStorage.removeItem("registrationInfo");
             successMessage.classList.add("hidden");
             loginContainer.classList.remove("hidden");
         }
     } else {
-        // نمایش فرم ورود به‌طور پیش‌فرض
+        
         successMessage.classList.add("hidden");
         loginContainer.classList.remove("hidden");
     }
@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
-            // بررسی صحت ایمیل
             if (!emailRegex.test(usernameValue)) {
                 Swal.fire({
                     position: "top-end",
@@ -68,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // بررسی صحت رمز عبور
+          
             if (!passwordRegex.test(passwordValue)) {
                 Swal.fire({
                     position: "top-end",
@@ -115,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             customClass: { popup: 'small-modal' }
                         });
 
-                        // ذخیره اطلاعات کاربر در Local Storage
+                       
                         localStorage.setItem(
                             "registrationInfo",
                             JSON.stringify({
