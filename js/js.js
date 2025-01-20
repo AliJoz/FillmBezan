@@ -86,9 +86,34 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".changeName").forEach((element) => {
     element.textContent = isDark ? "تم تیره" : "تم روشن";
   });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".btnVl"); 
+  const slider = document.getElementById("slider")
 
 
-  fetch("http://localhost/proje/php/getMovie.php")
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+     
+        buttons.forEach((btn) => {
+            btn.classList.remove('colorss');
+        });
+      
+        button.classList.add('colorss');
+        
+        const filter = button.value;
+        loadMovies(filter);
+    });
+});
+
+
+  
+  loadMovies();
+});
+
+// تابع برای بارگذاری داده‌ها
+function loadMovies(filter = "") {
+  fetch(`http://localhost/proje/php/getMovie.php?filter=${filter}`)
     .then((response) => {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       return response.json();
@@ -96,9 +121,11 @@ window.addEventListener("DOMContentLoaded", () => {
     .then((movies) => {
       const slider = document.getElementById("slider");
       if (slider) {
+        slider.innerHTML = ""; // پاک کردن محتوای قبلی
         movies.forEach((movie) => {
           const slide = document.createElement("div");
-          slide.className = "slide box-border xs:min-w-[80%] sm:min-w-[60%] md:min-w-[40%] lg:min-w-[25%] p-4";
+          slide.className =
+            "slide box-border xs:min-w-[80%] sm:min-w-[60%] md:min-w-[40%] lg:min-w-[25%] p-4";
           slide.innerHTML = `
             <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden dark:border-2 dark:border-zinc-700">
               <img src="../public/img/${movie.image_url}" alt="${movie.name}" class="w-full h-64 object-cover" />
@@ -126,8 +153,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     })
     .catch((error) => console.error("Error loading movies:", error));
-});
-
+}
 
 window.addEventListener("scroll", () => {
   const menu = document.getElementById("menus");
@@ -171,3 +197,4 @@ if (logoutBtn) {
     window.location.href = "index.html";
   });
 }
+

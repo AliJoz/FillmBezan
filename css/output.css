@@ -698,10 +698,6 @@ video {
   left: 12rem;
 }
 
-.left-64 {
-  left: 16rem;
-}
-
 .left-\[254px\] {
   left: 254px;
 }
@@ -734,6 +730,10 @@ video {
   right: 27rem;
 }
 
+.right-\[300px\] {
+  right: 300px;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -762,22 +762,6 @@ video {
   top: 100%;
 }
 
-.left-9 {
-  left: 2.25rem;
-}
-
-.left-96 {
-  left: 24rem;
-}
-
-.right-0 {
-  right: 0px;
-}
-
-.right-\[300px\] {
-  right: 300px;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -792,10 +776,6 @@ video {
 
 .z-50 {
   z-index: 50;
-}
-
-.float-end {
-  float: inline-end;
 }
 
 .m-\[4px\] {
@@ -1688,10 +1668,6 @@ video {
   padding-top: 1.5rem;
 }
 
-.pr-12 {
-  padding-right: 3rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -2211,6 +2187,12 @@ video {
   border-color: rgb(161 161 170 / var(--tw-border-opacity, 1));
 }
 
+.colorss {
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1));
+}
+
 .glass {
   background: rgba(255, 255, 255, 0.1);
   /* شفافیت پس‌زمینه */
@@ -2224,10 +2206,6 @@ video {
   /* گرد کردن گوشه‌ها */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   /* سایه ظریف */
-}
-
-.hover\:flex:hover {
-  display: flex;
 }
 
 .hover\:scale-100:hover {

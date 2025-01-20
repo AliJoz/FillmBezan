@@ -1,20 +1,36 @@
 <?php
-// تنظیم نوع محتوا برای ارسال JSON
+
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 
 
 
-$conn = new mysqli("localhost", "root", "", "FilmBezan");
+$host = "localhost";
+$user = "root";
+$password = "";
+$dbname = "FilmBezan";
 
+$conn = new mysqli($host, $user, $password, $dbname);
 
 if ($conn->connect_error) {
-    die(json_encode(["error" => "Failed to connect to database."]));
+    die("Connection failed: " . $conn->connect_error);
 }
 
 
-$sql = "SELECT id, name, description, genre, director, image_url, trailer_url, year, quality, rating FROM movies";
+$filter = isset($_GET['filter']) ? $_GET['filter'] : '';
+
+
+if ($filter === 'animation') {
+    $sql = "SELECT * FROM movies WHERE category = 'animation'";
+} elseif ($filter === 'cinema') {
+    $sql = "SELECT * FROM movies WHERE category = 'cinema'";
+} elseif ($filter === 'online') {
+    $sql = "SELECT * FROM movies WHERE category = 'online'";
+} else {
+    $sql = "SELECT * FROM movies"; 
+}
+
 $result = $conn->query($sql);
 
 
@@ -26,8 +42,8 @@ if ($result->num_rows > 0) {
 }
 
 
+header('Content-Type: application/json');
 echo json_encode($movies);
-
 
 $conn->close();
 ?>
