@@ -1,4 +1,3 @@
-
 const colorButtons = document.querySelectorAll('.color-btn');
 const circle1 = document.querySelector('.circle1');
 const circle2 = document.querySelector('.circle2');
@@ -20,37 +19,42 @@ document.addEventListener("DOMContentLoaded", () => {
     const successMessage = document.getElementById("successMessage");
     const successUserMessage = document.getElementById("successUserMessage");
     const loginContainer = document.getElementById("loginContainer");
+  
+    // بررسی وضعیت سشن با سرور
+    fetch("http://localhost/proje/php/SessionCheck.php", {
+        method: "GET",
+        credentials: "include", 
+    })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            if (data.loggedIn) {
+                
+                successUserMessage.textContent = `${data.username}، شما وارد شده‌اید.`;
+                successMessage.classList.remove("hidden");
+                loginContainer.classList.add("hidden");
+            } else {
+                
+                successMessage.classList.add("hidden");
+                loginContainer.classList.remove("hidden");
+            }
+        })
+        .catch((error) => {
+            console.error("Error checking session:", error);
+        });
 
-    
-    const registrationInfo = JSON.parse(localStorage.getItem("registrationInfo"));
-    
-    if (registrationInfo) {
-        const { username: registeredUsername, timestamp } = registrationInfo;
-        const elapsedTime = (Date.now() - timestamp) / 1000; // مدت زمان گذشته از ثبت‌نام به ثانیه
-
-        if (elapsedTime < 120) {
-           
-            successUserMessage.textContent = `${registeredUsername}، شما ثبت‌نام کرده‌اید.`;
-            successMessage.classList.remove("hidden");
-            loginContainer.classList.add("hidden");
-        } else {
-           
-            localStorage.removeItem("registrationInfo");
-            successMessage.classList.add("hidden");
-            loginContainer.classList.remove("hidden");
-        }
-    } else {
-        
-        successMessage.classList.add("hidden");
-        loginContainer.classList.remove("hidden");
-    }
-
+ 
     if (loginBtn) {
         loginBtn.addEventListener("click", (e) => {
             e.preventDefault();
 
             const usernameValue = username.value.trim();
             const passwordValue = password.value.trim();
+
 
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
@@ -62,12 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     title: "ایمیل وارد شده معتبر نیست.",
                     showConfirmButton: false,
                     timer: 1500,
-                    customClass: { popup: 'small-modal' }
+                    customClass: { popup: "small-modal" },
                 });
                 return;
             }
 
-          
             if (!passwordRegex.test(passwordValue)) {
                 Swal.fire({
                     position: "top-end",
@@ -75,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     title: "رمز عبور باید حداقل ۸ کاراکتر باشد و شامل حروف و اعداد باشد.",
                     showConfirmButton: false,
                     timer: 1500,
-                    customClass: { popup: 'small-modal' }
+                    customClass: { popup: "small-modal" },
                 });
                 return;
             }
@@ -86,12 +89,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "در حال بررسی ورود...",
                 showConfirmButton: false,
                 timer: 2000,
-                customClass: { popup: 'small-modal' }
+                customClass: { popup: "small-modal" },
             });
+
 
             fetch("http://localhost/proje/php/Login.php", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
+                credentials: "include", 
                 body: JSON.stringify({ username: usernameValue, password: passwordValue }),
             })
                 .then((response) => {
@@ -102,30 +107,44 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
                 .then((data) => {
                     if (data.success) {
-                    
-                        
-                        window.location.href = `index.html?username=${encodeURIComponent(data.username)}`;
+                   
                         Swal.fire({
                             position: "top-end",
                             icon: "success",
                             title: data.message || "ورود موفقیت‌آمیز بود!",
                             showConfirmButton: false,
                             timer: 2500,
-                            customClass: { popup: 'small-modal' }
+                            customClass: { popup: "small-modal" },
                         });
-
-                       
-                        localStorage.setItem(
-                            "registrationInfo",
-                            JSON.stringify({
-                                username: usernameValue,
-                                timestamp: Date.now()
+            
+                
+                        successUserMessage.textContent = `${usernameValue}، شما وارد شده‌اید.`;
+                        console.log(data);
+                        
+                        successMessage.classList.remove("hidden");
+                        loginContainer.classList.add("hidden");
+            
+                 
+                        fetch("http://localhost/proje/php/SessionCheck.php", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            credentials: "include",
+                            body: JSON.stringify({ username: usernameValue }), 
+                        })
+                            .then((response) => response.json())
+                            .then((sessionData) => {
+                                if (sessionData.success) {
+                                    console.log("سشن با موفقیت ذخیره شد");
+                                } else {
+                                    console.error("خطا در ذخیره سشن");
+                                }
                             })
-                        );
-
-                        // هدایت به صفحه ایندکس
+                            .catch((error) => {
+                                console.error("خطا در ذخیره سشن:", error);
+                            });
+            
+                        
                         setTimeout(() => {
-                            
                             window.location.href = "index.html";
                         }, 2000);
                     } else {
@@ -135,10 +154,12 @@ document.addEventListener("DOMContentLoaded", () => {
                             title: data.message || "ورود ناموفق بود.",
                             showConfirmButton: false,
                             timer: 2500,
-                            customClass: { popup: 'small-modal' }
+                            customClass: { popup: "small-modal" },
                         });
                     }
                 })
+               
+            
                 .catch(() => {
                     Swal.fire({
                         position: "top-end",
@@ -146,9 +167,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         title: "مشکلی در ارتباط با سرور پیش آمد.",
                         showConfirmButton: false,
                         timer: 2500,
-                        customClass: { popup: 'small-modal' }
+                        customClass: { popup: "small-modal" },
                     });
                 });
         });
     }
 });
+

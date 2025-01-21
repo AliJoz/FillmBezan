@@ -187,20 +187,72 @@ if (menuBtn && closeMenu && subMenu && overlay) {
 }
 
 
-const user = document.getElementById("user");
-const urlParams = new URLSearchParams(window.location.search);
-const username = urlParams.get("username");
+document.addEventListener("DOMContentLoaded", () => {
+  const user = document.getElementById("user");
+  const userMenu = document.getElementById("userMenu");
+  const logoutBtn = document.getElementById("logoutBtn");
 
-if (username && user) {
-  user.textContent = ` ${username}`;
-  document.getElementById("userMenu")?.classList.remove("hidden");
-}
+  // بررسی وضعیت ورود کاربر
+  fetch("http://localhost/proje/php/SessionCheck.php", {
+    method: "GET",
+    credentials: "include", // برای ارسال کوکی‌ها
+  })
+  
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      if (data.loggedIn) {
+        // اگر کاربر وارد شده است، اطلاعات نمایش داده شود
+        if (user) {
+          user.textContent = ` ${data.username}`;
+          console.log("اطلاعات کاربر دریافت شد:", data);
+        }
+        if (userMenu) {
+          userMenu.classList.remove("hidden");
+        }
+      } else {
+        // اگر کاربر وارد نشده است، هدایت به صفحه ورود
+        console.log("کاربر وارد نشده است، هدایت به صفحه ورود");
+        window.location.href = "login.html";
+      }
+    })
+    .catch((error) => {
+      console.error("خطا در ارتباط با سرور:", error);
+      alert("خطا در برقراری ارتباط با سرور. لطفاً دوباره تلاش کنید.");
+    });
 
-
-const logoutBtn = document.getElementById("logoutBtn");
-if (logoutBtn) {
-  logoutBtn.addEventListener("click", () => {
-    window.location.href = "index.html";
-  });
-}
-
+  // مدیریت دکمه خروج
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      // ارسال درخواست لاگ‌اوت به سرور
+      fetch("http://localhost/proje/php/logout.php", {
+        method: "POST",
+        credentials: "include", // ارسال کوکی‌ها
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          if (data.success) {
+            console.log(data.message || "با موفقیت خارج شدید.");
+            // هدایت به صفحه اصلی یا ورود
+            window.location.href = "index.html";
+          } else {
+            console.error("خطا در خروج:", data.message);
+            alert("خطا در خروج. لطفاً دوباره تلاش کنید.");
+          }
+        })
+        .catch((error) => {
+          console.error("خطا در ارتباط با سرور:", error);
+          alert("خطا در برقراری ارتباط با سرور. لطفاً دوباره تلاش کنید.");
+        });
+    });
+  }
+});
