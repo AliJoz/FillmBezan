@@ -148,12 +148,18 @@ function loadMovies(filter = "") {
               </div>
             </div>
           `;
+          slide.addEventListener("click", () => {
+           
+            window.location.href = `Detels.html?id=${movie.id}`;
+          });
           slider.appendChild(slide);
         });
       }
     })
     .catch((error) => console.error("Error loading movies:", error));
 }
+
+
 
 window.addEventListener("scroll", () => {
   const menu = document.getElementById("menus");
