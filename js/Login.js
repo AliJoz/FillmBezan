@@ -20,32 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const successUserMessage = document.getElementById("successUserMessage");
     const loginContainer = document.getElementById("loginContainer");
   
-    // بررسی وضعیت سشن با سرور
-    fetch("http://localhost/proje/php/SessionCheck.php", {
-        method: "GET",
-        credentials: "include", 
-    })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then((data) => {
-            if (data.loggedIn) {
-                
-                successUserMessage.textContent = `${data.username}، شما وارد شده‌اید.`;
-                successMessage.classList.remove("hidden");
-                loginContainer.classList.add("hidden");
-            } else {
-                
-                successMessage.classList.add("hidden");
-                loginContainer.classList.remove("hidden");
-            }
-        })
-        .catch((error) => {
-            console.error("Error checking session:", error);
-        });
+    
 
  
     if (loginBtn) {
@@ -101,11 +76,16 @@ document.addEventListener("DOMContentLoaded", () => {
             })
                 .then((response) => {
                     if (!response.ok) {
+                        console.log('Response:', response);
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
                     return response.json();
                 })
+           
+                
                 .then((data) => {
+                    console.log(data);
+                    
                     if (data.success) {
                    
                         Swal.fire({

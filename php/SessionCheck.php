@@ -14,7 +14,7 @@ function writeLog($message)
     file_put_contents(LOG_FILE, $logMessage, FILE_APPEND);
 }
 
-$session_timeout = 5 * 60; // 5 دقیقه
+$session_timeout = 50 * 60; // 5 دقیقه
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

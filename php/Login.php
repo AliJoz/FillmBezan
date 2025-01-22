@@ -3,15 +3,14 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// مقدار مجاز Origin (اینجا می‌توانید دامنه‌های مجاز را تنظیم کنید)
+session_start();
 
 
-// تنظیم هدرهای CORS
 header("Access-Control-Allow-Origin: http://localhost");
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-// مدیریت درخواست‌های OPTIONS
+
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit;
@@ -21,12 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-// فایل لاگ
 $logFile = 'request.log';
 
 
 
-// تابع ثبت داده‌ها در لاگ
+
 function logData($message)
 {
     global $logFile;
@@ -35,14 +33,13 @@ function logData($message)
     file_put_contents($logFile, "[$timestamp] [IP: $ip] $message\n", FILE_APPEND);
 }
 
-// تنظیمات اتصال به پایگاه داده
 $host = "localhost";
 $username = "root";
 $password = "";
 $dbname = "Filmbezan";
 
 try {
-    // اتصال به پایگاه داده
+   
     $conn = new mysqli($host, $username, $password, $dbname);
     if ($conn->connect_error) {
         throw new Exception("ارتباط با پایگاه داده برقرار نشد: " . $conn->connect_error);
@@ -57,7 +54,7 @@ try {
     exit;
 }
 
-// بررسی متد درخواست
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     logData("درخواست نامعتبر با متد " . $_SERVER['REQUEST_METHOD']);
     echo json_encode([
@@ -67,7 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// دریافت داده‌های ورودی
 $input = file_get_contents("php://input");
 logData("داده خام دریافت‌شده: $input");
 
@@ -105,7 +101,7 @@ if (empty($password)) {
     exit;
 }
 try {
-    // بررسی وجود کاربر
+   
     $query = "SELECT * FROM users WHERE Email = ?";
     $stmt = $conn->prepare($query);
 
@@ -120,26 +116,33 @@ try {
 
     if ($user) {
         logData("ایمیل در سیستم موجود است: " . json_encode($user));
-
-        // بررسی رمز عبور
-        if (password_verify($password, $user['Password'])) {
-            // ذخیره اطلاعات کاربر در session
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['email'] = $user['email'];
-
+    
+       
+        logData("شروع بررسی رمز عبور برای کاربر: " . $email);
+        logData("رمز عبور ذخیره‌شده در دیتابیس: " . $user['password']);
+        logData("رمز عبور ارسال‌شده: $password");
+    
+        if (password_verify($password, $user['password'])) {
+            logData("رمز عبور صحیح است. ورود موفق.");
+            
+    
+    
             echo json_encode([
                 "success" => true,
                 "message" => "ورود موفقیت‌آمیز بود.",
-                "username" => $user['email']
+                "username" => $email,
             ]);
         } else {
+            logData("رمز عبور اشتباه است.");
             echo json_encode([
                 "success" => false,
                 "message" => "رمز عبور اشتباه است."
             ]);
         }
+    
+    
     } else {
-        // ثبت کاربر جدید
+      
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $insertQuery = "INSERT INTO users (Email, Password) VALUES (?, ?)";
         $insertStmt = $conn->prepare($insertQuery);
@@ -152,7 +155,7 @@ try {
         if ($insertStmt->execute()) {
             logData("کاربر با موفقیت اضافه شد: $email");
 
-            // ذخیره کاربر جدید در session
+           
             $_SESSION['user_id'] = $insertStmt->insert_id;
             $_SESSION['email'] = $email;
 

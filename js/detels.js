@@ -40,34 +40,122 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Handle comment submission
-  submitCommentBtn.addEventListener('click', () => {
-    const commentText = commentInput.value.trim();
-    if (commentText === '') {
-      modal.classList.remove("hidden");
-      closeModalBtn.addEventListener("click", () => modal.classList.add("hidden"));
-      modolP.innerHTML = "لطفا جای نظر خالی نباشد.";
-      modal.addEventListener("click", (event) => {
-        if (event.target === modal) modal.classList.add("hidden");
-      });
-      return;
-    }
+// دکمه ثبت کامنت
+submitCommentBtn.addEventListener('click', () => {
+  const commentText = commentInput.value.trim();
 
-    const commentElement = document.createElement('div');
-    commentElement.classList.add('p-4', 'border', 'border-gray-300', 'rounded-md', 'mb-4', 'pb-12');
-    commentElement.innerHTML = `
-      <p class="font-medium dark:text-zinc-800">${commentText}</p>
-      <p class="text-yellow-500 mt-2">${'⭐️'.repeat(selectedRating)}</p>
-      <p class="text-gray-500 text-sm mt-2">توسط: ${currentUsername}</p>
-    `;
-    
-    commentsList.appendChild(commentElement);
+  // چک کردن خالی نبودن متن کامنت
+  if (commentText === '') {
+    modal.classList.remove("hidden");
+    modolP.innerHTML = "لطفا جای نظر خالی نباشد.";
+    closeModalBtn.addEventListener("click", () => modal.classList.add("hidden"));
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) modal.classList.add("hidden");
+    });
+    return;
+  }
 
-    // Clear form
-    commentInput.value = '';
-    updateStars(0); 
-    commentFormContainer.classList.add('hidden');
-    createCommentBtn.classList.remove('hidden');
-  });
+  // چک کردن وضعیت لاگین کاربر
+  fetch("http://localhost/proje/php/SessionCheck.php", {
+    method: "GET",
+    credentials: "include", // شامل کوکی‌ها برای تایید سشن
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      if (data.loggedIn) {
+        const username = data.username;
+
+        // گرفتن آیدی فیلم از URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const movieId = urlParams.get('id');
+
+        if (!movieId) {
+          alert("شناسه فیلم معتبر نیست.");
+          return;
+        }
+
+        // ارسال کامنت به سرور
+        fetch("http://localhost/proje/php/submit_comment.php", {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            movie_id: movieId,
+            comment: commentText,
+          }),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("خطا در ارسال کامنت.");
+            }
+            return response.json();
+          })
+          .then((commentResponse) => {
+            if (commentResponse.success) {
+              // اضافه کردن کامنت به لیست کامنت‌ها
+              const commentElement = document.createElement('div');
+              commentElement.classList.add('p-4', 'border', 'border-gray-300', 'rounded-md', 'mb-4');
+              commentElement.innerHTML = `
+                <p class="font-medium dark:text-zinc-800">${commentText}</p>
+                <p class="text-gray-500 text-sm mt-2">توسط: ${username}</p>
+              `;
+
+              commentsList.appendChild(commentElement);
+
+              // پاک کردن فرم
+              commentInput.value = '';
+              commentFormContainer.classList.add('hidden');
+              createCommentBtn.classList.remove('hidden');
+            } else {
+              alert("خطا در ثبت کامنت.");
+            }
+          })
+          .catch((error) => {
+            console.error("خطا در ارسال کامنت:", error);
+          });
+
+        // نمایش کامنت‌های موجود
+        fetch(`http://localhost/proje/php/getComments.php?movie_id=${movieId}`)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("خطا در دریافت کامنت‌ها.");
+            }
+            return response.json();
+          })
+          .then((comments) => {
+            commentsList.innerHTML = ''; // پاک کردن لیست قبلی
+
+            comments.forEach((comment) => {
+              const commentElement = document.createElement('div');
+              commentElement.classList.add('p-4', 'border', 'border-gray-300', 'rounded-md', 'mb-4');
+              commentElement.innerHTML = `
+                <p class="font-medium dark:text-zinc-800">${comment.comment}</p>
+                <p class="text-gray-500 text-sm mt-2">توسط: ${comment.username}</p>
+              `;
+
+              commentsList.appendChild(commentElement);
+            });
+          })
+          .catch((error) => {
+            console.error("خطا در دریافت کامنت‌ها:", error);
+          });
+      } else {
+        // هدایت به صفحه ورود در صورت لاگین نبودن
+        window.location.href = "login.html";
+      }
+    })
+    .catch((error) => {
+      console.error("خطا در ارتباط با سرور:", error);
+      alert("خطا در برقراری ارتباط با سرور. لطفاً دوباره تلاش کنید.");
+    });
+});
 
   // Fetch movie details
   function fetchMovieDetails() {
@@ -141,4 +229,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Fetch movie details on page load
   fetchMovieDetails();
-});
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+})
